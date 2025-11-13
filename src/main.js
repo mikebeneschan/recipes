@@ -1,6 +1,8 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
+console.log('Vite frontend loaded');
+
+fetch('/api/')
+  .then(res => res.json())
+  .then(data => console.log(data));
 
