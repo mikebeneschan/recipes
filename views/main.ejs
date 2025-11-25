@@ -1,3 +1,7 @@
 <h1>Mike's recipes</h1>
 <h2>This is the homepage</h2>
-<a href="/post1">Post1</a>
+<ul>
+    <% postlist.forEach(function(post){ %>
+        <li><a><%=post.title%></li></a>
+    <% }) %>
+</ul>

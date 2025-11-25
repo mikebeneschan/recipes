@@ -2,8 +2,17 @@ import express from 'express';
 import Post from '../models/post.js'
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('main', { layout: './layouts/main' });
+router.get('/', async (req, res) => {
+  try {
+    const foundItems = await Post.find()
+    foundItems.forEach(function(item){ 
+      console.log(item.title)
+    })
+    res.render('main', { layout: './layouts/main', postlist: foundItems});
+    // res.render('main', { layout: './layouts/main' });
+  } catch (error) {
+     console.log(error);
+  }
 });
 
 // About page
@@ -22,12 +31,14 @@ router.get('/contact', (req, res) => {
   });
 });
 
-function insertPost() {
-  Post.insertOne({
-    title: 'post1',
-    content: 'lorem ipsum'
-  })
-}
-insertPost();
+// // TEST CODE TO INSERT POST INTO MONGODB
+// function insertPost() {
+//   Post.insertOne({
+//     title: 'penne alla vodka',
+//     content: 'lorem ipsum VODKA',
+//     slug: 'penne-alla-vodka'
+//   })
+// }
+// insertPost();
 
 export default router;
