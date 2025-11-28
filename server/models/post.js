@@ -8,7 +8,8 @@ const postSchema = new Schema({
     ingredients:{type:String, required:false},
     procedure:{type:[String], required:false},
     tags:{type:[String], required:false},
-    publishDate:{type:Date, default:Date.now}
+    publishDate:{type:Date, default:Date.now},
+    image:{type:String}
 })
 
 const Post = model('Post', postSchema)

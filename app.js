@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 
-// Serve static assets (for example, the css file)
+// Serve static assets
 app.use(express.static('public'));
 
 app.use(expressLayouts);

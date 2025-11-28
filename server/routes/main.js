@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/recipes/:slug', async (req,res) => {
   const {slug} = req.params
   const result = await Post.findOne({ slug })
+  console.log(result.image)
   res.render('post', {
     layout: './layouts/post',
     title: result.title,
@@ -45,9 +46,10 @@ router.get('/contact', (req, res) => {
 // // TEST CODE TO INSERT POST INTO MONGODB
 // function insertPost() {
 //   Post.insertOne({
-//     title: 'penne alla vodka',
-//     content: 'lorem ipsum VODKA',
-//     slug: 'penne-alla-vodka'
+//     title: 'tteok2',
+//     content: 'pls load the image man i will beg',
+//     slug: 'tteok2',
+//     image: "tteokbokki.jpg"
 //   })
 // }
 // insertPost();
