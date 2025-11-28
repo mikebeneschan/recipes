@@ -15,6 +15,17 @@ router.get('/', async (req, res) => {
   }
 });
 
+// All recipe posts are routed through here
+router.get('/recipes/:slug', async (req,res) => {
+  const {slug} = req.params
+  const result = await Post.findOne({ slug })
+  res.render('post', {
+    layout: './layouts/post',
+    title: result.title,
+    data: result
+  })
+})
+
 // About page
 router.get('/about', (req, res) => {
   res.render('about', {

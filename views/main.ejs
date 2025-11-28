@@ -2,6 +2,8 @@
 <h2>This is the homepage</h2>
 <ul>
     <% postlist.forEach(function(post){ %>
-        <li><a><%=post.title%></li></a>
+        <li>
+            <a href="/recipes/<%= post.slug %>"><%=post.title%></a>
+        </li>
     <% }) %>
 </ul>
