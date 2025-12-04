@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   try {
     const foundItems = await Post.find()
     foundItems.forEach(function(item){ 
-      console.log(item.title)
+      console.log(item.subtitle)
     })
     res.render('main', { layout: './layouts/main', postlist: foundItems});
     // res.render('main', { layout: './layouts/main' });

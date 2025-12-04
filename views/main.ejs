@@ -3,7 +3,11 @@
 <ul>
     <% postlist.forEach(function(post){ %>
         <li>
-            <a href="/recipes/<%= post.slug %>"><%=post.title%></a>
+            <a style="font-weight: bold; font-size: 19px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
+            <% if(post.subtitle){ %>
+            <p class="st" style="margin: 2px; color: #81b29a; font-style: italic"><%=post.subtitle%></p>
+            <% } %>
         </li>
+        <hr style="margin-top: 20px">
     <% }) %>
 </ul>

@@ -1,8 +1,8 @@
 :root {
   color: #3d405b;
   background-color: #f4f1de;
-  --link-color: #81b29a;
-  --link-hover-color: #456958;
+  --link-color: #456958;
+  --link-hover-color: #81b29a;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -45,6 +45,12 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 
+}
+
+hr {
+  border-color: #ffffff;
+  background-color: #eeeeee;
+  opacity: 50%
 }
 
 #app {

@@ -12,8 +12,9 @@
 
   <!-- Main Page Content -->
   <main>
-    <h1><%= data.title %></h1>
-    <img src = "/images/<%= data.image %>" aspect-ratio=1 height="400px">
+    <h1 style="margin-bottom: 4px"><%= data.title %></h1>
+    <p class="st" style="margin: 2px; color: #81b29a; font-style: italic"><%=data.subtitle%></p>
+    <img src = "/images/<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 34px">
     <p><%= data.content %></p>
   </main>
 
