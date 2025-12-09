@@ -1,9 +1,4 @@
 :root {
-  color: #3d405b;
-  background-color: #f4f1de;
-  --link-color: #456958;
-  --link-hover-color: #81b29a;
-
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 200;
@@ -30,15 +25,29 @@ body {
   margin: 10px;
   display: flexbox;
   place-items: center;
-  width: 50%;
+  width: 80%;
   min-width: 520px;
   min-height: 100vh;
   font-family: 'Helvetica';
   font-style:normal;
+  color: #3d405b;
+  background-color: #f4f1de;
+  --link-color: #456958;
+  --link-hover-color: #81b29a;
+}
+
+.dark-mode {
+  color: #f4f1de;
+  background-color: #212332;
+  --link-color: #81b29a;
+  --link-hover-color: #a0ddbf;
 }
 
 
-.recipes {
+.st {
+  margin: 2px; 
+  color: #81b29a; 
+  font-style: italic
 }
 
 h1 {
@@ -111,4 +120,89 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+main {
+  width: 40%;
+}
+
+.img-cont {
+  width: 150px;
+  height: 100px;
+}
+
+.foodpic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3d405b;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3d405b;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+nav {
+  position: absolute;
+  top: 4px;
 }

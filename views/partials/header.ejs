@@ -1,7 +1,24 @@
-<header style="background:#f5f5f5; padding: 1rem;">
-  <nav>
+  <!-- Rounded switch -->
+  <label class="switch">
+    <input type="checkbox" onclick="darkMode()">
+    <span class="slider round"></span>
+  </label>
+<header >
+  <nav style="background:#f5f5f5; padding: 1rem;">
     <a href="/">Home</a> |
     <a href="/about">About</a> |
     <a href="/contact">Contact</a>
   </nav>
 </header>
+
+<script>
+  function darkMode() {
+    console.log("darkmode clicked")
+    document.body.classList.toggle("dark-mode")
+    document.getElementById("subheader").classList.toggle("dark-mode")
+    var subh = document.getElementById("subheader")
+    if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode) 🌙"}
+    else {subh.innerHTML = "This is the homepage"}
+  }
+</script>
+
