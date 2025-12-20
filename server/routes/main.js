@@ -46,10 +46,12 @@ router.get('/contact', (req, res) => {
 // // TEST CODE TO INSERT POST INTO MONGODB
 // function insertPost() {
 //   Post.insertOne({
-//     title: 'tteok2',
+//     title: 'Basic Yogurt Bowl',
 //     content: 'pls load the image man i will beg',
 //     slug: 'tteok2',
 //     image: "tteokbokki.jpg"
+//     ingredients: [],
+//     procedure: [],
 //   })
 // }
 // insertPost();

@@ -7,7 +7,7 @@ const postSchema = new Schema({
     content:{type:String, required:true},
     section:{type:String},
     slug:{type:String, unique:true, required:false},
-    ingredients:{type:String, required:false},
+    ingredients:{type:[String], required:false},
     procedure:{type:[String], required:false},
     tags:{type:[String], required:false},
     publishDate:{type:Date, default:Date.now},

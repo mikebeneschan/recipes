@@ -15,7 +15,22 @@
     <h1 style="margin-bottom: 4px"><%= data.title %></h1>
     <p class="st" style="margin: 2px; color: #81b29a; font-style: italic"><%=data.subtitle%></p>
     <img src = "/images/<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 34px">
-    <p><%= data.content %></p>
+    <p><%- data.content %></p>
+
+    <h1>Recipe</h1>
+    <h2>Ingredients</h2>
+    <ul>
+    <% data.ingredients.forEach(function(ing){ %>
+      <li><%= ing %></li>
+    <% }) %>
+    </ul>
+
+    <h2>Steps</h2>
+    <ol>
+    <% data.procedure.forEach(function(step){ %>
+      <li><%= step %></li>
+    <% }) %>
+    </ol>    
   </main>
 
   <!-- Footer -->
