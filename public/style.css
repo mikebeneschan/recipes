@@ -29,11 +29,12 @@ body {
   min-width: 520px;
   min-height: 100vh;
   font-family: 'Helvetica';
-  font-style:normal;
+  /* font-style:normal; */
   color: #3d405b;
   background-color: #f4f1de;
   --link-color: #456958;
   --link-hover-color: #81b29a;
+  padding-bottom: 300px;
 }
 
 .dark-mode {
@@ -205,4 +206,8 @@ input:checked + .slider:before {
 nav {
   position: absolute;
   top: 4px;
+}
+
+strong {
+  font-weight: 300;
 }
