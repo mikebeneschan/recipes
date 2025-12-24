@@ -11,7 +11,8 @@ const postSchema = new Schema({
     procedure:{type:[String], required:false},
     tags:{type:[String], required:false},
     publishDate:{type:Date, default:Date.now},
-    image:{type:String}
+    image:{type:String},
+    servingSize: {type:String}
 })
 
 const Post = model('Post', postSchema)

@@ -18,19 +18,30 @@
     <p><%- data.content %></p>
 
     <h1>Recipe</h1>
-    <h2>Ingredients</h2>
-    <ul>
-    <% data.ingredients.forEach(function(ing){ %>
-      <li><%= ing %></li>
-    <% }) %>
-    </ul>
+    <div class="recipe-container">
+      <div style="display: flex; flex-direction:row">
+        <div>
+          <h2 style="margin-top: 0px; margin-bottom: 0px;"><%= data.title %></h2>
+          <p class="st" style="margin-top: 0;"><%= data.servingSize %></p>
+        </div>
+        <div class="img-cont" style="margin-left: auto;">
+            <img class="foodpic" style="border-radius: 12px;" src = "/images/<%= data.image %>">
+        </div>
+      </div>
+      <h3>Ingredients</h3>
+      <ul>
+      <% data.ingredients.forEach(function(ing){ %>
+        <li><%- ing %></li>
+      <% }) %>
+      </ul>
 
-    <h2>Steps</h2>
-    <ol>
-    <% data.procedure.forEach(function(step){ %>
-      <li><%= step %></li>
-    <% }) %>
-    </ol>    
+      <h3>Steps</h3>
+      <ol>
+      <% data.procedure.forEach(function(step){ %>
+        <li><%= step %></li>
+      <% }) %>
+      </ol>    
+    </div>
   </main>
 
   <!-- Footer -->

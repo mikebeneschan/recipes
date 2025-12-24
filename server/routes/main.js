@@ -46,7 +46,7 @@ router.get('/contact', (req, res) => {
 // TEST CODE TO INSERT POST INTO MONGODB
 // function insertPost() {
 //   Post.insertOne({
-//     title: 'Maple-Bourbon-Soy Glaze Salmon',
+//     title: 'Hot shots (for non-Europeans)',
 //     content: '<p class="has-line-data" data-line-start="0" data-line-end="1">This came to me because I went to the grocery to buy salmon, and next to the normal fillets (about 12 dollars) they had a set called “maple bourbon glazed salmon” that cost 22 dollars. “That sounds delicious,” I thought. “I\’m going to make that myself.” So I did. And you know what? It is delicious. And since I already had bourbon and maple syrup on hand, it didn\’t cost me 22 dollars (chef math).</p><p class="has-line-data" data-line-start="2" data-line-end="3">One note, bourbon is a type of whiskey made in the United States. So if you\’re a Canadian protesting the bourbon industry due to U.S. tariff laws, any whiskey will work fine. Bourbon tends to be a little sweeter than other whiskeys though (since it\’s made from corn), so adjust the sweetness accordingly.</p><p class="has-line-data" data-line-start="4" data-line-end="5">The salmon itself is seasoned minimally so that most of the flavor comes from the glaze.</p>',
 //     subtitle: "Take three flavorful things and put it on some fish",
 //     slug: 'maple-bourbon-salmon',
