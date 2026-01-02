@@ -2,6 +2,17 @@
 
 * {
   box-sizing: border-box;
+
+  /* tag colors */
+  --tag-color-korean: #212d67;
+  --tag-color-family-sized: #4c2222;
+  --tag-color-vegetarian: #1b4b1b;
+  --tag-color-dessert: pink;
+  --tag-color-italian: #6ba96b;
+  --tag-color-pasta: #e9b72e;
+  --tag-color-drink: #5c30a3;
+  --tag-color-alcohol: #783838;
+  --tag-color-fish: rgb(37, 37, 151);
 }
 
 :root {
@@ -53,17 +64,23 @@ body {
 
 .dark-mode {
   color: #f4f1de;
-  background-color: #212332;
+  background-color: #0e0f16;
   --link-color: #81b29a;
   --link-hover-color: #a0ddbf;
-  --background-recipe-color: #313130;
+  --background-recipe-color: #212332;
 }
-
+/* 0e0f16 */
 
 .st {
   margin: 2px; 
   color: #81b29a; 
-  font-style: italic
+  font-style: italic;}
+
+.st-post{
+  font-size: 20px;
+}
+.no-bold {
+  font-weight: 400;
 }
 
 h1 {
@@ -240,4 +257,68 @@ p, li {
   background-color: var(--background-recipe-color);
   border-radius: 12px;
   padding: 20px 10px 5px 10px;
+}
+
+.recipe-card-link{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* very janky fix for the card hovering, not keyboard accessible */
+li:hover a {
+  color: var(--link-hover-color)
+}
+
+.cont {
+  position:relative;
+}
+
+.tag-cont {
+
+  padding: 0px 10px 0px 0px;
+}
+
+.tag {
+  color: black;
+    background: white;
+  padding: 4px 8px 4px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+
+}
+
+.tag-Korean {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-korean);
+}
+
+.tag-Vegetarian {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-vegetarian);
+}
+
+.tag-Family-sized {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-family-sized);
+}
+.tag-Dessert {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-dessert);
+}
+.tag-Drink {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-drink);
+}
+
+.tag-Italian {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-italian);
+}
+
+.tag-Alcohol {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-alcohol);
+}
+
+.tag-Fish {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-fish);
+}
+
+.tag-Pasta {
+  box-shadow: 3px 3px 0px 2px var(--tag-color-pasta);
 }

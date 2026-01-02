@@ -13,8 +13,18 @@
   <!-- Main Page Content -->
   <main>
     <h1 style="margin-bottom: 4px"><%= data.title %></h1>
-    <p class="st" style="margin: 2px; color: #81b29a; font-style: italic"><%=data.subtitle%></p>
-    <img src = "/images/<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 34px">
+    <p class="st st-post" style="margin: 2px; color: #81b29a; font-style: italic"><%=data.subtitle%></p>
+    <div style="display:flex; flex-direction: row;">
+      <% data.tags.forEach(function(tag){ %>
+
+        <div class="tag-cont">
+          <a class="no-bold" href="/tags">
+          <p class="tag tag-<%- tag %>"><%- tag %></p>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+    <img src = "/images/<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 10px">
     <p><%- data.content %></p>
 
     <h1>Recipe</h1>

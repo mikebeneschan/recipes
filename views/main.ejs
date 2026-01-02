@@ -1,24 +1,28 @@
 
 <h1>Mike's recipes</h1>
 <h2 id="subheader">This is the homepage</h2>
-<!-- <ul style="width:100%"> -->
     <% postlist.forEach(function(post){ %>
+
         <div class="cont">
-        <li style="display: flex; flex-direction:row">
-            <div>
-                <a style=" font-size: 19px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
-                <% if(post.subtitle){ %>
-                <p class="st"><%=post.subtitle%></p>
-                <% } %>
-            </div>
-            <div class="img-cont" style="margin-left: auto;">
-                <img class="foodpic" src = "/images/<%= post.image %>">
-            </div>
-        </li>
+        <a class="recipe-card-link" href="/recipes/<%= post.slug %>">
+           <li style="display: flex; flex-direction:row">
+                <div>
+                    <a style=" font-size: 19px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
+                    <% if(post.subtitle){ %>
+                    <p class="st"><%=post.subtitle%></p>
+                    <% } %>
+                </div>
+                <div class="img-cont" style="margin-left: auto;">
+                    <img class="foodpic" src = "/images/<%= post.image %>">
+                </div>
+
+            </li>
+
+            </a>
         </div>
+
         <hr style="margin-top: 20px">
     <% }) %>
-<!-- </ul> -->
 
 <script>
     var subh = document.getElementById("subheader")
