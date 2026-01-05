@@ -17,10 +17,17 @@
   function darkMode() {
     console.log("darkmode clicked")
     document.body.classList.toggle("dark-mode")
-    document.getElementById("subheader").classList.toggle("dark-mode")
-    var subh = document.getElementById("subheader")
-    if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode) 🌙"}
-    else {subh.innerHTML = "This is the homepage"}
+    if(document.getElementById("subheader")){
+      document.getElementById("subheader").classList.toggle("dark-mode")
+      var subh = document.getElementById("subheader")
+      if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode) 🌙"}
+      else {subh.innerHTML = "This is the homepage"}
+    }
+    document.getElementById("catimgcont").classList.toggle("dark-mode")
+    var gerald = document.getElementById("catimgcont")
+    // gerald.classList.toggle("dark-mode")
+    if (gerald.classList.contains("dark-mode")) {gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothingheredarkmode.png\" style = \"height: 350px; width: auto; text-align: center;\">"}
+    else {gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothinghere.png\" style = \"height: 350px; width: auto; text-align: center;\">"};
   }
 </script>
 

@@ -15,23 +15,29 @@
     <div id="possibleTagBox" style="display: flex; flex-direction: row;">
         <h3 style="margin-right: 10px">Tags:</h3>
         <div class="tag-cont">
-            <p class="tag inactive tag-Alcohol inactive">Alcohol</p>
+            <p class="tag tag-Alcohol inactive">Alcohol</p>
         </div>
 
         <div class="tag-cont">
-            <p class="tag inactive tag-Dessert inactive">Dessert</p>
+            <p class="tag tag-Dessert inactive">Dessert</p>
         </div>
         <div class="tag-cont">
-            <p class="tag inactive tag-Drink inactive">Drink</p>
+            <p class="tag tag-Drink inactive">Drink</p>
         </div>
         <div class="tag-cont">
-            <p class="tag inactive tag-Italian inactive">Italian</p>
+            <p class="tag tag-Family-sized inactive">Family-sized</p>
+        </div>
+        <div class="tag-cont">
+            <p class="tag tag-Italian inactive">Italian</p>
         </div>
         <div class="tag-cont">
             <p class="tag tag-Korean inactive">Korean</p>
         </div>
         <div class="tag-cont">
             <p class="tag tag-Pasta inactive">Pasta</p>
+        </div>
+        <div class="tag-cont">
+            <p class="tag tag-Vegetarian inactive">Vegetarian</p>
         </div>
 
         
@@ -41,16 +47,11 @@
     <br>
     
     <h2 class="st">Results: </h2>
-    <br>
     <hr>
-    <!-- <hr style="background-color: black"> -->
 
-        <!-- <input type="checkbox" id="Italian" value="Italian" name="tags">
-        <label for="Italian">Italian</label> 
-        <input type="checkbox" id="Korean" value="Korean" name="tags">
-        <label for="Korean">Korean</label> 
-        <input type="checkbox" id="pasta" value="pasta" name="tags">
-        <label for="pasta">Pasta</label>  -->
+    <div id="tagPostCont">
+    <%- include('partials/foundPosts') %>
+    </div>
 
     <% data.forEach(function(post){ %>
         <div class="cont">
@@ -72,7 +73,7 @@
             </div>
     
             <hr style="margin-top: 20px">
-        <% }) %>
+    <% }) %>
 
 </body>
 <!-- <script>

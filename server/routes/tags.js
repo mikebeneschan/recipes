@@ -5,15 +5,18 @@ const tagsRouter = express.Router();
 tagsRouter.get('/', async (req, res) => {
     try {
         console.log("using tagsRouter")
-        // tagList = document.getElementsByClassName("tag")
+        let d = []
 
-        const specTags = ["Italian", "Korean"];
-        const t = "Italian"
-        console.log(specTags)
-        const d = await Post.find({tags: {$in: specTags}});
-        d.forEach(function(item){
-            // console.log(item.title)
-        })
+        // //dummy data to make sure the db search shit works
+        // const specTags = ["Italian", "Korean"];
+        // const t = "Italian"
+        // console.log(specTags)
+        // d = await Post.find({tags: {$in: specTags}});
+        // d.forEach(function(item){
+        //     // console.log(item.title)
+        // })
+
+
         res.render('tags', {
         layout: './layouts/main',
         title: 'Tags',
@@ -27,9 +30,20 @@ tagsRouter.get('/', async (req, res) => {
 tagsRouter.post('/tagFind', async (req,res) => {
     let query = req.body.prompt
     console.log(query)
-    let result = await Post.findOne({tags: {$in: query}})
-    if (!result) res.status(200).send("not ffound")
-    else res.status(200).send(result)
-})
+    let result = await Post.find({tags: {$in: query}})
+    // if (!result) res.status(200).send("not ffound")
+    // else res.status(200).send(result)
+    res.render(
+        'partials/foundPosts',
+        { 
+            data: result,
+            layout: false 
+        },
+        (err, html) => {
+        if (err) return res.status(500).send(err);
+        res.json({ html });
+        }
+    )
+  });
 
 export default tagsRouter;

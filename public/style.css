@@ -164,6 +164,10 @@ main {
   min-width: 750px;
 }
 
+nav {
+  border-radius: 12px;
+}
+
 .img-cont {
   width: 150px;
   height: 100px;
@@ -351,14 +355,14 @@ li:hover a {
   box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-inactive);
   /* border: 1px "solid" var(--tag-color-inactive); */
   color: var(--tag-color-inactive);
-  margin-top: none;
+  margin-top: 14px;
   transition: margin-top .1s, border 0.1s;
   outline: none;
 }
 
 .get-to-the-top {
   /* margin-top: none; */
-  margin-top: 15%;
+  margin-top: 7px;
   transition: margin-top .1s;
   /* animation-name: topSlide;
   animation-duration: .1s;

@@ -18,7 +18,7 @@
       <% data.tags.forEach(function(tag){ %>
 
         <div class="tag-cont">
-          <a class="no-bold" href="/tags">
+          <a class="no-bold" href="/tags?tags=<%- tag %>">
           <p class="tag tag-<%- tag %>"><%- tag %></p>
           </a>
         </div>
