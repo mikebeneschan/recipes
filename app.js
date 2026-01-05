@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import router from './server/routes/main.js';
+import tagsRouter from './server/routes/tags.js';
 
 import connectDB from './server/config/db.js'
 
@@ -17,6 +18,7 @@ connectDB();
 app.use(express.static('public'));
 
 app.use(expressLayouts);
+app.use(express.json())
 app.set('layout', './layouts/main');
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -27,8 +29,12 @@ app.set('view engine', 'ejs');
 //   next();
 // });
 
+app.use('/tags', tagsRouter);
 app.use('/', router);
+
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
 })
+
+// app.post('/tag'){}

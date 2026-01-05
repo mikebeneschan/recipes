@@ -45,12 +45,12 @@ router.get('/contact', (req, res) => {
 
 // Tags page
 // not finalized
-router.get('/tags', (req, res) => {
-  res.render('tags', {
-    layout: './layouts/main',
-    title: 'Tags'
-  });
-});
+// router.get('/tags', (req, res) => {
+//   res.render('tags', {
+//     layout: './layouts/main',
+//     title: 'Tags'
+//   });
+// });
 
 // TEST CODE TO INSERT POST INTO MONGODB
 // function insertPost() {

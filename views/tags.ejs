@@ -1,3 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags</title>
+</head>
+<body>
+    <h1>Tags</h1>
+    <h2 class="st">This is the tags page</h2>
+    <!-- probably some way in the future to make a list of tags -->
+    <!-- <div id="selectedTagBox" style="height: 57px"></div> -->
+    <!-- <h3 style="margin-top: 0%;">Tags</h3> -->
+    <div id="possibleTagBox" style="display: flex; flex-direction: row;">
+        <h3 style="margin-right: 10px">Tags:</h3>
+        <div class="tag-cont">
+            <p class="tag inactive tag-Alcohol inactive">Alcohol</p>
+        </div>
 
-<h1>tags page</h1>
-<p>this is the tags page</p>
+        <div class="tag-cont">
+            <p class="tag inactive tag-Dessert inactive">Dessert</p>
+        </div>
+        <div class="tag-cont">
+            <p class="tag inactive tag-Drink inactive">Drink</p>
+        </div>
+        <div class="tag-cont">
+            <p class="tag inactive tag-Italian inactive">Italian</p>
+        </div>
+        <div class="tag-cont">
+            <p class="tag tag-Korean inactive">Korean</p>
+        </div>
+        <div class="tag-cont">
+            <p class="tag tag-Pasta inactive">Pasta</p>
+        </div>
+
+        
+        
+    </div>
+
+    <br>
+    
+    <h2 class="st">Results: </h2>
+    <br>
+    <hr>
+    <!-- <hr style="background-color: black"> -->
+
+        <!-- <input type="checkbox" id="Italian" value="Italian" name="tags">
+        <label for="Italian">Italian</label> 
+        <input type="checkbox" id="Korean" value="Korean" name="tags">
+        <label for="Korean">Korean</label> 
+        <input type="checkbox" id="pasta" value="pasta" name="tags">
+        <label for="pasta">Pasta</label>  -->
+
+    <% data.forEach(function(post){ %>
+        <div class="cont">
+            <a class="recipe-card-link" href="/recipes/<%= post.slug %>">
+               <li style="display: flex; flex-direction:row">
+                    <div>
+                        <a style=" font-size: 19px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
+                        <% if(post.subtitle){ %>
+                        <p class="st"><%=post.subtitle%></p>
+                        <% } %>
+                    </div>
+                    <div class="img-cont" style="margin-left: auto;">
+                        <img class="foodpic" src = "/images/<%= post.image %>">
+                    </div>
+    
+                </li>
+    
+                </a>
+            </div>
+    
+            <hr style="margin-top: 20px">
+        <% }) %>
+
+</body>
+<!-- <script>
+    var tagList = document.getElementsByClassName("tag")
+    tagList.array.forEach(e => {
+        e.addEventListener("click", () => {
+            console.log("clicked")
+        })
+    });
+    var tagArray = ["Italian"]
+</script> -->
+<script type="module", src="../main.js"></script>
+</html>
