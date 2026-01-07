@@ -7,16 +7,6 @@ tagsRouter.get('/', async (req, res) => {
         console.log("using tagsRouter")
         let d = []
 
-        // //dummy data to make sure the db search shit works
-        // const specTags = ["Italian", "Korean"];
-        // const t = "Italian"
-        // console.log(specTags)
-        // d = await Post.find({tags: {$in: specTags}});
-        // d.forEach(function(item){
-        //     // console.log(item.title)
-        // })
-
-
         res.render('tags', {
         layout: './layouts/main',
         title: 'Tags',
