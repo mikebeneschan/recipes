@@ -3,7 +3,10 @@
 <h2 id="subheader">This is the homepage</h2>
 <h2>Most recent: </h2>
 <hr>
-    <% postlist.forEach(function(post){ %>
+<div id="main-cont">
+    <%- include('partials/foundPosts') %>
+
+    <!-- <% data.forEach(function(post){ %>
 
         <div class="cont">
         <a class="recipe-card-link" href="/recipes/<%= post.slug %>">
@@ -24,10 +27,14 @@
         </div>
 
         <hr style="margin-top: 20px">
-    <% }) %>
-
+    <% }) %> -->
+</div>
+<div style="text-align: center">
+    <button type="button" id="loadMore">Load more</button>
+</div>
 <script>
     var subh = document.getElementById("subheader")
     if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode)"}
     // else {subh.innerHTML = "This is the homepage"}
 </script>
+<script type="module", src="../loadmore.js"></script>

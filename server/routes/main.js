@@ -2,12 +2,13 @@ import express from 'express';
 import Post from '../models/post.js'
 const router = express.Router();
 
+// homepage
 router.get('/', async (req, res) => {
   try {
-    const foundItems = await Post.find().sort({publishDate: 'desc'}).lean()
+    const foundItems = await Post.find().sort({publishDate: 'desc'}).lean().limit(5)
     foundItems.forEach(function(item){ 
     })
-    res.render('main', { layout: './layouts/main', postlist: foundItems});
+    res.render('main', { layout: './layouts/main', data: foundItems});
   } catch (error) {
      console.log(error);
   }
@@ -40,5 +41,25 @@ router.get('/contact', (req, res) => {
     title: 'Contact'
   });
 });
+
+
+router.post('/posts', async (req,res) => {
+    let query = req.body.prompt
+    console.log("query:" +query)
+    let result = await Post.find().limit(query).sort({publishDate: 'desc'}).lean()
+    // if (!result) res.status(200).send("not ffound")
+    // else res.status(200).send(result)
+    res.render(
+        'partials/foundPosts',
+        { 
+            data: result,
+            layout: false 
+        },
+        (err, html) => {
+        if (err) return res.status(500).send(err);
+        res.json({ html });
+        }
+    )
+  });
 
 export default router;
