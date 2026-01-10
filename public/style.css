@@ -390,6 +390,28 @@ li:hover a {
 
 }
 
+.gerald1 {
+  z-index: -1;
+  position: absolute;
+  height: 100px;
+  width: auto;
+  margin-left: 0px;
+  left: 650px;
+  top: -15px;
+  transition: top 0.5s
+}
+
+.gerald2 {
+  z-index: -1;
+  position: absolute;
+  height: 100px;
+  width: auto;
+  margin-left: 0px;
+  left: 650px;
+  top: -60px;
+  transition: top 0.5s
+}
+
 @keyframes topSlide{
   from {margin-top: none}
   to {margin-top: 15%}
