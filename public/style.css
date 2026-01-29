@@ -393,7 +393,7 @@ li:hover a {
 .gerald1 {
   z-index: -1;
   position: absolute;
-  height: 100px;
+  height: 160px;
   width: auto;
   margin-left: 0px;
   left: 650px;
@@ -404,11 +404,11 @@ li:hover a {
 .gerald2 {
   z-index: -1;
   position: absolute;
-  height: 100px;
+  height: 160px;
   width: auto;
   margin-left: 0px;
   left: 650px;
-  top: -60px;
+  top: -95px;
   transition: top 0.5s
 }
 
