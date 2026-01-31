@@ -5,29 +5,6 @@
 <hr>
 <div id="main-cont">
     <%- include('partials/foundPosts') %>
-
-    <!-- <% data.forEach(function(post){ %>
-
-        <div class="cont">
-        <a class="recipe-card-link" href="/recipes/<%= post.slug %>">
-           <li style="display: flex; flex-direction:row">
-                <div>
-                    <a style=" font-size: 19px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
-                    <% if(post.subtitle){ %>
-                    <p class="st"><%=post.subtitle%></p>
-                    <% } %>
-                </div>
-                <div class="img-cont" style="margin-left: auto;">
-                    <img class="foodpic" src = "/images/<%= post.image %>">
-                </div>
-
-            </li>
-
-            </a>
-        </div>
-
-        <hr style="margin-top: 20px">
-    <% }) %> -->
 </div>
 <div style="text-align: center">
     <button type="button" id="loadMore">Load more</button>
@@ -35,6 +12,5 @@
 <script>
     var subh = document.getElementById("subheader")
     if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode)"}
-    // else {subh.innerHTML = "This is the homepage"}
 </script>
 <script type="module", src="../loadmore.js"></script>

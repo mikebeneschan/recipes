@@ -22,7 +22,7 @@ loadMore.addEventListener("click", async () => {
     if (response.ok) {
         console.log("successful api call")
         let data = await response.json()
-        console.log(data)
+        console.log(typeof(data))
         document.querySelector("#main-cont").innerHTML = data.html;
     }
     else console.log("idk man it didn't work")

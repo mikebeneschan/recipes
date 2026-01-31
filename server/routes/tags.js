@@ -20,9 +20,7 @@ tagsRouter.get('/', async (req, res) => {
 tagsRouter.post('/tagFind', async (req,res) => {
     let query = req.body.prompt
     console.log(query)
-    let result = await Post.find({tags: {$in: query}})
-    // if (!result) res.status(200).send("not ffound")
-    // else res.status(200).send(result)
+    let result = await Post.find({tags: {$all: query}})
     res.render(
         'partials/foundPosts',
         { 
