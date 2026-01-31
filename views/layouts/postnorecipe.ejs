@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>recipes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <%- include('../partials/header') %>
+
+  <!-- Main Page Content -->
+  <main>
+    <h1 style="margin-bottom: 4px"><%= data.title %></h1>
+    <p class="st st-post" style="margin: 2px; color: #81b29a; font-style: italic"><%=data.subtitle%></p>
+    <div style="display:flex; flex-direction: row;">
+      <% data.tags.forEach(function(tag){ %>
+        <% if (tag=="Not a recipe") { %>
+            <div class="tag-cont">
+            <a class="no-bold" href="/tags?tags=not-a-recipe">
+            <p class="tag tag-not-a-recipe"><%- tag %></p>
+            </a>
+            </div>
+        <% } else { %>
+            <div class="tag-cont">
+            <a class="no-bold" href="/tags?tags=<%- tag %>">
+            <p class="tag tag-<%- tag %>"><%- tag %></p>
+            </a>
+            </div>
+        <% } %>
+      <% }) %>
+    </div> 
+    <div style="position: relative">
+      <img id="mainimg" src = "/images/<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 10px;">
+    </div>
+    <p><%- data.content %></p>
+  </main>
+
+  <!-- Footer -->
+  <!-- <%- include('../partials/footer') %> -->
+   <script>
+
+    // TO DO: clean this up, only i2 and g2 (i think) are actually used
+      let i = document.querySelector("#mainimg")
+      let g = document.querySelector("#sneaky")
+      i.addEventListener("mouseover", () => {
+        g.classList.toggle("gerald2")
+        g.classList.toggle("gerald1")
+      })
+      i.addEventListener("mouseout", () => {
+        g.classList.toggle("gerald2")
+        g.classList.toggle("gerald1")
+      })
+
+      let i2 = document.querySelector(".recipe-container")
+      let g2 = document.querySelector("#sneaky2")
+      i2.addEventListener("mouseover", () => {
+        g2.classList.toggle("gerald2")
+        g2.classList.toggle("gerald1")
+      })
+      i2.addEventListener("mouseout", () => {
+        g2.classList.toggle("gerald2")
+        g2.classList.toggle("gerald1")
+      })
+
+   </script>
+</body>
+</html>

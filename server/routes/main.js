@@ -18,9 +18,16 @@ router.get('/', async (req, res) => {
 router.get('/recipes/:slug', async (req,res) => {
   const {slug} = req.params
   const result = await Post.findOne({ slug })
-  console.log(result.image)
+  // let layout = './layouts/post'
+  console.log(result.tags)
+  let layout = ''
+  if (result.tags.includes('Not a recipe')){ 
+    console.log ('no recipe detected')
+    layout = './layouts/postnorecipe'
+  } else { layout = './layouts/post'}
+
   res.render('post', {
-    layout: './layouts/post',
+    layout: layout,
     title: result.title,
     data: result
   })

@@ -14,6 +14,7 @@
   --tag-color-alcohol: #783838;
   --tag-color-fish: rgb(37, 37, 151);
   --tag-color-inactive: #adadad;
+  --tag-color-norecipe: black;
 
   /* other variables */
   --box-shadow-length: 3px;
@@ -334,8 +335,8 @@ li:hover a {
 .tag-Family-sized {
   box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-family-sized);
   outline: 1px solid var(--tag-color-family-sized);
-
 }
+
 .tag-Dessert {
   box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-dessert);
   outline: 1px solid var(--tag-color-dessert);
@@ -345,6 +346,11 @@ li:hover a {
   box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-drink);
   outline: 1px solid var(--tag-color-drink);
 
+}
+
+.tag-not-a-recipe {
+  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-norecipe);
+  outline: 1px solid var(--tag-color-norecipe);
 }
 
 .tag-Italian {
