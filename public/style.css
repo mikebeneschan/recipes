@@ -55,10 +55,8 @@ body {
   display: flexbox;
   place-items: center;
   width: 99%;
-  /* min-width: 520px; */
   min-height: 100vh;
   font-family: 'Helvetica';
-  /* font-style:normal; */
   color: #3d405b;
   background-color: #f4f1de;
   --link-color: #456958;
@@ -74,7 +72,6 @@ body {
   --link-hover-color: #a0ddbf;
   --background-recipe-color: #212332;
 }
-/* 0e0f16 */
 
 .st {
   margin: 2px; 
