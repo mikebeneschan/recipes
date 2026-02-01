@@ -419,3 +419,14 @@ li:hover a {
   from {margin-top: none}
   to {margin-top: 15%}
 }
+.dark-only {
+  display: none;
+}
+
+.dark-mode .light-only {
+  display: none;
+}
+
+.dark-mode .dark-only {
+  display: inline;
+}
