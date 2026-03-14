@@ -11,7 +11,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // connect to mongoDB
-connectDB();
+const startServer = async () => {
+    await connectDB();
+    app.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`)
+    })
+}
+startServer();
 
 app.use(express.static('public'));
 
@@ -25,6 +31,4 @@ app.use('/tags', tagsRouter);
 app.use('/', router);
 
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`)
-})
+
