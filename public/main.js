@@ -32,7 +32,7 @@ tagList.forEach(e => {
         e.classList.toggle("inactive")
         e.classList.toggle("get-to-the-top");
 
-        response = await fetch ("http://localhost:3000/tags/tagFind", {
+        response = await fetch ("/tags/tagFind", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function showSpinner() {
 }
 
 async function tagCall() {
-    response = await fetch ("http://localhost:3000/tags/tagFind", {
+    response = await fetch ("/tags/tagFind", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
