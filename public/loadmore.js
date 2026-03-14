@@ -10,7 +10,7 @@ loadMore.addEventListener("click", async () => {
     console.log("PostNumber = "+ postNumber)
 
     
-    response = await fetch ("http://localhost:3000/posts", {
+    response = await fetch ("/posts", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
