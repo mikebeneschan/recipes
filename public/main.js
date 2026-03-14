@@ -18,9 +18,7 @@ tagCall()
 
 const tagList = document.querySelectorAll(".tag")
 tagList.forEach(e => {
-    // console.log(e) 
     e.addEventListener("click", async (obj) => {
-        // showSpinner()
         let txt = obj.target.textContent
 
         if(tagArray.includes(txt)){

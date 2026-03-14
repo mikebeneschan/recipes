@@ -18,6 +18,8 @@
 
   /* other variables */
   --box-shadow-length: 3px;
+
+  
 }
 
 :root {
@@ -162,10 +164,6 @@ main {
   min-width: 750px;
 }
 
-nav {
-  border-radius: 12px;
-}
-
 .img-cont {
   width: 150px;
   height: 100px;
@@ -180,8 +178,8 @@ nav {
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 24px;
+  width: 60px;
+  height: 28px;
 }
 
 /* Hide default HTML checkbox */
@@ -204,28 +202,36 @@ nav {
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 24px;
+  display: flex;
+  flex-direction: row;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: .2s;
   transition: .2s;
   border-radius: 50%;
 }
 
+.dm-svg {
+  z-index:2;
+  position: relative;
+  /* left: 3px; */
+  top: 3px;
+}
+
+
+
 input:checked + .slider {
   background-color: #8e8e8e;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #3d405b;
-}
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -245,6 +251,16 @@ input:checked + .slider:before {
 nav {
   position: absolute;
   top: 4px;
+  color: black;
+  border-radius: 12px;
+}
+
+nav a {
+  color: #456958;
+}
+
+nav a:hover {
+  color: #81b29a;
 }
 
 strong {
@@ -429,4 +445,8 @@ li:hover a {
 
 .dark-mode .dark-only {
   display: inline;
+}
+
+.has-line-data a {
+  text-decoration: underline;
 }

@@ -54,8 +54,6 @@ router.post('/posts', async (req,res) => {
     let query = req.body.prompt
     console.log("query:" +query)
     let result = await Post.find().limit(query).sort({publishDate: 'desc'}).lean()
-    // if (!result) res.status(200).send("not ffound")
-    // else res.status(200).send(result)
     res.render(
         'partials/foundPosts',
         { 

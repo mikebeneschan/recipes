@@ -2,6 +2,8 @@ console.log("darkmode.js loaded")
 let darkmode = localStorage.getItem('darkmode')
 const switcher = document.getElementById('dm-switcher')
 const subheader = document.getElementById("subheader")
+const sun = document.getElementById("dm-svg-lm")
+const moon = document.getElementById("dm-svg-dm")
 
 const enableDarkMode = () => {
     let gerald = document.getElementById("catimgcont")
@@ -16,11 +18,14 @@ const enableDarkMode = () => {
         gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothingheredarkmode.png\" style = \"height: 350px; width: auto; text-align: center;\" alt=\"crude drawing of a cat saying the following: Nothing here! Wow, dark mode! \">"
     }
     localStorage.setItem('darkmode', 'true')
+    
+    sun.style.opacity="0"
+    moon.style.opacity="1"
 
 }
 
 const disableDarkMode = () => {
-    const gerald = document.getElementById("catimgcont")
+    let gerald = document.getElementById("catimgcont")
     darkmode = localStorage.getItem('darkmode')
     document.body.classList.remove("dark-mode")
     localStorage.setItem('darkmode', null)
@@ -32,6 +37,9 @@ const disableDarkMode = () => {
         gerald.classList.remove("dark-mode")
         gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothinghere.png\" style = \"height: 350px; width: auto; text-align: center;\" alt=\"crude drawing of a cat saying the following: Nothing here! \">"
     }
+
+    sun.style.opacity="1"
+    moon.style.opacity="0"
 }
 
 switcher.addEventListener('click', ()=> {
@@ -45,14 +53,9 @@ switcher.addEventListener('click', ()=> {
     darkmode = localStorage.getItem('darkmode')
     console.log("after: "+darkmode)
 
-    // if(document.getElementById("subheader")){
-    //   document.getElementById("subheader").classList.toggle("dark-mode")
-    //   var subh = document.getElementById("subheader")
-    //   if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode) 🌙"}
-    //   else {subh.innerHTML = "This is the homepage"}
-    // }
 })
 
 if (darkmode==="true"){
+    switcher.checked = true;
     enableDarkMode()
 }
