@@ -38,7 +38,9 @@
         <div style="display: flex; flex-direction:row">
           <div>
             <h2 style="margin-top: 0px; margin-bottom: 0px;"><%= data.title %></h2>
-            <p class="st" style="margin-top: 0;"><%= data.servingSize %></p>
+            <% if(data.recipeCards.length>0 && data.recipeCards[0].servingSize){ %>
+              <p class="st" style="margin-top: 0;"><%= data.recipeCards[0].servingSize %></p>
+            <% } %>
           </div>
           <div class="img-cont" style="margin-left: auto;">
               <img class="foodpic" style="border-radius: 12px;" src = "/images/<%= data.image %>">
@@ -46,16 +48,25 @@
         </div>
         <h3>Ingredients</h3>
         <ul>
-        <% data.ingredients.forEach(function(ing){ %>
-          <li><%- ing %></li>
-        <% }) %>
+        <!-- loop to display ingredients -->
+        <% if(data.recipeCards.length>0){ %>
+          <% data.recipeCards[0].ingredients.forEach(function(ingGrp){ %>
+            <h3 style="margin-bottom: 0%; font-size: 95%; text-decoration: underline"><%- ingGrp.sectionName %></h3>
+            <% ingGrp.ings.forEach(function(ing){%>
+              <li><%- ing %></li>
+            <% }) %>
+          <% }) %>
+        <% } %>
         </ul>
 
         <h3>Steps</h3>
         <ol>
-        <% data.procedure.forEach(function(step){ %>
-          <li><%= step %></li>
-        <% }) %>
+        <!-- loop to display steps -->
+        <% if(data.recipeCards.length>0){ %>
+          <% data.recipeCards[0].procedure.forEach(function(step){ %>
+            <li><%- step %></li>
+          <% }) %>
+        <% } %>
         </ol>    
       </div>
     </div>
