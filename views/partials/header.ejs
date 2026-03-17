@@ -14,7 +14,12 @@
 
   </label>
 <header >
-  <nav style="background:#f5f5f5; padding: 1rem;">
+  <div id="banner-cont" style="display:grid">
+    <img id="banner" class="banner" src = "/images/header-lm.png" style = "height:100px; z-index:2" alt="Mike B. Cooking">
+    <img id="bannerAni" class="banner" src = "/images/header-lm-ani.gif" style = "height:100px; z-index:1; opacity:0" alt="Mike B. Cooking">
+
+  </div>
+  <nav style="padding: 1rem;">
     <a href="/">Home</a> |
     <a href="/about">About</a> |
     <a href="/tags">Tags</a> |
@@ -22,3 +27,16 @@
 
   </nav>
 </header>
+<script>
+  bannerStatic = document.getElementById("banner")
+  bannerAni = document.getElementById("bannerAni")
+  bannerStatic.addEventListener('mouseover', ()=> {
+    bannerStatic.style.opacity="0"
+    bannerAni.style.opacity="1"
+  })
+  bannerStatic.addEventListener('mouseleave', () => {
+    bannerStatic.style.opacity="1"
+    bannerAni.style.opacity="0"
+
+  })
+</script>

@@ -59,12 +59,16 @@ body {
   width: 99%;
   min-height: 100vh;
   font-family: 'Helvetica';
+  padding-bottom: 300px;
+
+  
   color: #3d405b;
   background-color: #f4f1de;
   --link-color: #456958;
   --link-hover-color: #81b29a;
   --background-recipe-color: #FBFBF9;
-  padding-bottom: 300px;
+  --nav-background-color: #FBFBF9;
+  --nav-color: black;
 }
 
 .dark-mode {
@@ -73,6 +77,8 @@ body {
   --link-color: #81b29a;
   --link-hover-color: #a0ddbf;
   --background-recipe-color: #212332;
+  --nav-background-color: #212332;
+  --nav-color: white;
 }
 
 .st {
@@ -162,6 +168,7 @@ button:focus-visible {
 main {
   max-width: 800px;
   min-width: 750px;
+  position: relative;
 }
 
 .img-cont {
@@ -250,22 +257,30 @@ input:checked + .slider:before {
 
 
 nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   top: 4px;
-  color: black;
+  color: var(--nav-color);
   border-radius: 12px;
+  /* width: fit-content; */
   padding: 0px;
+  background: var(--nav-background-color);
 }
 
-nav a {
+header {
+  top: 4px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* nav a {
   color: #456958;
 }
 
 nav a:hover {
   color: #81b29a;
-}
+} */
 
 strong {
   font-weight: 300;
@@ -451,6 +466,11 @@ li:hover a {
   display: inline;
 }
 
-.has-line-data a {
+p a {
   text-decoration: underline;
+}
+
+.banner {
+  grid-column: 1;
+  grid-row: 1;
 }
