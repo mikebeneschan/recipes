@@ -6,6 +6,7 @@
 
   /* tag colors */
   --tag-color-korean: #212d67;
+  --tag-color-breakfast: #ffb050;
   --tag-color-family-sized: #4c2222;
   --tag-color-vegetarian: #1b4b1b;
   --tag-color-dessert: #ffc0cb;
@@ -13,9 +14,12 @@
   --tag-color-pasta: #e9b72e;
   --tag-color-drink: #5c30a3;
   --tag-color-alcohol: #783838;
-  --tag-color-fish: rgb(37, 37, 151);
+  --tag-color-fish: #252597;
   --tag-color-inactive: #adadad;
   --tag-color-norecipe: black;
+  --tag-color-sandwiches: #7e664d;
+  --tag-color-sides: #6a6ca9;
+  --tag-color-coffee: #5a3b29;
 
   /* other variables */
   --box-shadow-length: 3px;
@@ -326,7 +330,6 @@ li:hover a {
 
 /* tag styling */
 .tag-cont {
-  /* cursor: pointer; */
   padding: 0px 10px 0px 0px;
 }
 
@@ -341,18 +344,22 @@ li:hover a {
 
 [class*="tag-"]{
   box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color);
-  outline: 1px solid var(--tag-color)
+  outline: 1px solid var(--tag-color);
 }
 
 .tag-Alcohol {       --tag-color: var(--tag-color-alcohol)}
-.tag-Drink {         --tag-color: var(--tag-color-drink)}
+.tag-Breakfast {     --tag-color: var(--tag-color-breakfast)}
+.tag-Coffee {        --tag-color: var(--tag-color-coffee)}
 .tag-Dessert {       --tag-color: var(--tag-color-dessert)}
+.tag-Drink {         --tag-color: var(--tag-color-drink)}
 .tag-Family-sized {  --tag-color: var(--tag-color-family-sized)}
 .tag-Fish {          --tag-color: var(--tag-color-fish)}
 .tag-Italian {       --tag-color: var(--tag-color-italian)}
 .tag-Korean {        --tag-color: var(--tag-color-korean)}
-.tag-not-a-recipe {  --tag-color: var(--tag-color-notarecipe)}
+.tag-not-a-recipe {  --tag-color: var(--tag-color-norecipe)}
 .tag-Pasta {         --tag-color: var(--tag-color-pasta)}
+.tag-Sandwiches {    --tag-color: var(--tag-color-sandwiches)}
+.tag-Sides {         --tag-color: var(--tag-color-sides)}
 .tag-Vegetarian {    --tag-color: var(--tag-color-vegetarian)}
 
 
@@ -460,6 +467,7 @@ p a {
 
 .hp-dinner {
   background-color: #d4a29c;
+  /* background-image: linear-gradient(90deg, #d4a29c, #9daaa2) */
 }
 
 .hp-dessert {
