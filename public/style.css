@@ -30,8 +30,6 @@
 :root {
   font-family: DM Sans, system-ui, Avenir, Helvetica, Arial, sans-serif, Libre Baskerville;
   line-height: 1.5;
-  /* font-weight: 200; */
-
   color-scheme: light dark;
 
 
@@ -46,10 +44,13 @@ a {
   font-weight: 700;
   color: var(--link-color);
   text-decoration: inherit;
+  transition: color .1s
 }
 
 a:hover {
   color: var(--link-hover-color);
+  transition: color .2s
+
 }
 
 p {
@@ -106,6 +107,10 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 
+}
+
+h2 {
+  font-size: 30px;
 }
 
 hr {
@@ -167,6 +172,11 @@ main {
   height: 100px;
 }
 
+.img-hp {
+  width: 250px;
+  height: 167px;
+}
+
 .foodpic {
   width: 100%;
   height: 100%;
@@ -220,7 +230,6 @@ main {
 .dm-svg {
   z-index:2;
   position: relative;
-  /* left: 3px; */
   top: 3px;
 }
 
@@ -265,14 +274,6 @@ header {
   align-items: center;
 }
 
-/* nav a {
-  color: #456958;
-}
-
-nav a:hover {
-  color: #81b29a;
-} */
-
 strong {
   font-weight: 300;
 }
@@ -295,7 +296,6 @@ button {
 }
 
 button:hover {
-  /* box-shadow: 3px 3px 0px 2px var(--link-color); */
   background-color: var(--link-hover-color);
   cursor: pointer;
   transition: background-color .2s
@@ -320,6 +320,10 @@ button:hover {
 
 /* very janky fix for the card hovering, not keyboard accessible */
 li:hover a {
+  color: var(--link-hover-color)
+}
+
+.hp-icon-cont:hover a{
   color: var(--link-hover-color)
 }
 
@@ -372,13 +376,8 @@ li:hover a {
 }
 
 .get-to-the-top {
-  /* margin-top: none; */
   margin-top: 7px;
   transition: margin-top .1s;
-  /* animation-name: topSlide;
-  animation-duration: .1s;
-  animation-fill-mode: forwards; */
-
 }
 
 .gerald1 {
@@ -467,7 +466,6 @@ p a {
 
 .hp-dinner {
   background-color: #d4a29c;
-  /* background-image: linear-gradient(90deg, #d4a29c, #9daaa2) */
 }
 
 .hp-dessert {
