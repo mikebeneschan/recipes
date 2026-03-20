@@ -10,39 +10,58 @@
     <h1>Tags</h1>
     <h2 class="st">This is the tags page</h2>
     <!-- probably some way in the future to make a list of tags automatically-->
-    <!-- <div id="selectedTagBox" style="height: 57px"></div> -->
-    <!-- <h3 style="margin-top: 0%;">Tags</h3> -->
-    <div id="possibleTagBox" style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row;">
         <h3 style="margin-right: 10px">Tags:</h3>
-        <div class="tag-cont">
-            <p class="tag tag-Alcohol inactive">Alcohol</p>
-        </div>
+        <div style="display: flex; flex-direction: column;">
+            <!-- rows of tags -->
+            <div id="possibleTagBox" style="display: flex; flex-direction: row;">
+                <div class="tag-cont">
+                    <p class="tag tag-Alcohol inactive">Alcohol</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Breakfast inactive">Breakfast</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Coffee inactive">Coffee</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Dessert inactive">Dessert</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Drink inactive">Drink</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Family-sized inactive">Family-sized</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Fish inactive">Fish</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Italian inactive">Italian</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Korean inactive">Korean</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-not-a-recipe inactive">Not a recipe</p>
+                </div>
 
-        <div class="tag-cont">
-            <p class="tag tag-Dessert inactive">Dessert</p>
+            </div>
+            <div id="possibleTagBox" style="display: flex; flex-direction: row;">
+                <div class="tag-cont">
+                    <p class="tag tag-Pasta inactive">Pasta</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Sandwiches inactive">Sandwiches</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Sides inactive">Sides</p>
+                </div>
+                <div class="tag-cont">
+                    <p class="tag tag-Vegetarian inactive">Vegetarian</p>
+                </div>
+            </div>
         </div>
-        <div class="tag-cont">
-            <p class="tag tag-Drink inactive">Drink</p>
-        </div>
-        <div class="tag-cont">
-            <p class="tag tag-Family-sized inactive">Family-sized</p>
-        </div>
-        <div class="tag-cont">
-            <p class="tag tag-Fish inactive">Fish</p>
-        </div>
-        <div class="tag-cont">
-            <p class="tag tag-Italian inactive">Italian</p>
-        </div>
-        <div class="tag-cont">
-            <p class="tag tag-Korean inactive">Korean</p>
-        </div>
-        <div class="tag-cont">
-            <p class="tag tag-Pasta inactive">Pasta</p>
-        </div>
-        <div class="tag-cont">
-            <p class="tag tag-Vegetarian inactive">Vegetarian</p>
-        </div>
-        
     </div>
 
     <br>
@@ -77,14 +96,5 @@
     <% }) %>
 
 </body>
-<!-- <script>
-    var tagList = document.getElementsByClassName("tag")
-    tagList.array.forEach(e => {
-        e.addEventListener("click", () => {
-            console.log("clicked")
-        })
-    });
-    var tagArray = ["Italian"]
-</script> -->
 <script type="module", src="../main.js"></script>
 </html>

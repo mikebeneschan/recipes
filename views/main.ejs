@@ -3,11 +3,51 @@
 <h2 id="subheader">This is the homepage</h2>
 <h2>Most recent: </h2>
 <hr>
-<div id="main-cont">
+<div id="main-cont" style="max-width:90%; margin: 0 auto">
     <%- include('partials/foundPosts') %>
 </div>
 <div style="text-align: center">
     <button type="button" id="loadMore">Load more</button>
+</div>
+<h2>Click on these circles</h2>
+<div style="max-width: 90%; margin: 0 auto">
+    <div id="icon wrapper" style="display:grid; grid-template-columns:repeat(5,1fr)">
+        <div class="hp-icon-cont">
+            <div class="hp-icon-bg hp-breakfast">
+                <img class="hp-icon" src="/svgs/hp/draw-breakfast.png">
+                <!-- <img class="hp-icon" src="/svgs/hp/donut.svg"> -->
+            </div>
+            <a>Breakfast</a>
+        </div>
+        <div class="hp-icon-cont ">
+            <div class="hp-icon-bg hp-lunch">
+                <img class="hp-icon" src="/svgs/hp/draw-lunch.png">
+                <!-- <img class="hp-icon" src="/svgs/hp/lunch.svg"> -->
+            </div>
+            <a>Sandwiches</a>
+        </div>
+        <div class="hp-icon-cont ">
+            <div class="hp-icon-bg hp-dinner">
+                <img class="hp-icon" src="/svgs/hp/draw-dinner.png">
+                <!-- <img class="hp-icon" src="/svgs/hp/steak.svg"> -->
+            </div>
+            <a>Dinners</a>
+        </div>
+        <div class="hp-icon-cont ">
+            <div class="hp-icon-bg hp-dessert">
+                <img class="hp-icon" src="/svgs/hp/draw-dessert.png">
+                <!-- <img class="hp-icon" src="/svgs/hp/sundae.svg"> -->
+            </div>
+            <a>Dessert</a>
+        </div>
+        <div class="hp-icon-cont ">
+            <div class="hp-icon-bg hp-drink">
+                <img class="hp-icon" src="/svgs/hp/draw-drink.png">
+                <!-- <img class="hp-icon" src="/svgs/hp/drink.svg"> -->
+            </div>
+            <a>Drinks</a>
+        </div>
+    </div>
 </div>
 <script>
     var subh = document.getElementById("subheader")

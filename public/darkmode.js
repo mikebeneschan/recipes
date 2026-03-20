@@ -15,11 +15,9 @@ const enableDarkMode = () => {
         subheader.innerHTML = "This is the homepage (now in dark mode) 🌙"
     }
     if (gerald) {
-        // gerald.classList.add("dark-mode")
         gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothingheredarkmode.png\" style = \"height: 350px; width: auto; text-align: center;\" alt=\"crude drawing of a cat saying the following: Nothing here! Wow, dark mode! \">"
     }
     if (banner) {
-        // banner.classList.add("dark-mode")
         banner.innerHTML = `
             <img id="banner" class="banner" src = "/images/header-dm.png" style = "height:100px; z-index:2" alt="Mike B. Cooking">
             <img id="bannerAni" class="banner" src = "/images/header-dm-ani.gif" style = "height:100px; z-index:1; opacity:0" alt="Mike B. Cooking">
@@ -43,11 +41,9 @@ const disableDarkMode = () => {
         subheader.innerHTML = "This is the homepage"
     }
     if (gerald) {
-        gerald.classList.remove("dark-mode")
         gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothinghere.png\" style = \"height: 350px; width: auto; text-align: center;\" alt=\"crude drawing of a cat saying the following: Nothing here! \">"
     }
     if (banner) {
-        // banner.classList.add("dark-mode")
         banner.innerHTML = `
             <img id="banner" class="banner" src = "/images/header-lm.png" style = "height:100px; z-index:2" alt="Mike B. Cooking">
             <img id="bannerAni" class="banner" src = "/images/header-lm-ani.gif" style = "height:100px; z-index:1; opacity:0" alt="Mike B. Cooking">
