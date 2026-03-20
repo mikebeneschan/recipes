@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
   box-sizing: border-box;
@@ -23,7 +24,7 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: DM Sans, system-ui, Avenir, Helvetica, Arial, sans-serif, Libre Baskerville;
   line-height: 1.5;
   /* font-weight: 200; */
 
@@ -37,7 +38,7 @@
 }
 
 a {
-  font-family: "Helvetica", ;
+  font-family: "DM Sans";
   font-weight: 700;
   color: var(--link-color);
   text-decoration: inherit;
@@ -45,6 +46,10 @@ a {
 
 a:hover {
   color: var(--link-hover-color);
+}
+
+p {
+  font-family: "DM Sans";
 }
 
 .recipe-container h1, .recipe-container h2,.recipe-container h3 {
@@ -58,7 +63,7 @@ body {
   place-items: center;
   width: 99%;
   min-height: 100vh;
-  font-family: 'Helvetica';
+  font-family: 'DM Sans';
   padding-bottom: 300px;
 
   
@@ -133,25 +138,6 @@ hr {
   color: #888;
 }
 
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-} */
-/* button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -166,9 +152,10 @@ button:focus-visible {
 }
 
 main {
-  max-width: 800px;
-  min-width: 750px;
+  /* max-width: 1000px; */
+  min-width: 1000px;
   position: relative;
+  margin: 0 auto;
 }
 
 .img-cont {
@@ -473,4 +460,53 @@ p a {
 .banner {
   grid-column: 1;
   grid-row: 1;
+}
+
+.hp-icon-cont {
+  display:flex; 
+  flex-direction:column; 
+  text-align:center;
+  cursor:pointer;
+}
+
+.hp-icon {
+  width:60px;
+  height:60px;
+  margin: 10px auto 10px auto;
+}
+
+.hp-icon-bg {
+  width:80px; 
+  height:80px; 
+  background-color:white; 
+  margin:0 auto; 
+  border-radius:100%;
+  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px black;
+
+}
+
+.hp-icon-cont a {
+  margin-top: 10px;
+}
+
+
+/* styling for icons for categories on the homepage */
+.hp-breakfast {
+  background-color: #edcc8b;
+}
+
+.hp-lunch {
+  background-color: #e8b298;
+}
+
+.hp-dinner {
+  background-color: #d4a29c;
+}
+
+.hp-dessert {
+  background-color: #bdd1c5;
+}
+
+.hp-drink {
+  background-color: #9daaa2;
 }
