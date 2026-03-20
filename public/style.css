@@ -337,68 +337,27 @@ li:hover a {
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
-
 }
 
-.tag-Korean {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-korean);
-  outline: 1px solid var(--tag-color-korean);
+[class*="tag-"]{
+  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color);
+  outline: 1px solid var(--tag-color)
 }
 
-.tag-Vegetarian {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-vegetarian);
-  outline: 1px solid var(--tag-color-vegetarian);
+.tag-Alcohol {       --tag-color: var(--tag-color-alcohol)}
+.tag-Drink {         --tag-color: var(--tag-color-drink)}
+.tag-Dessert {       --tag-color: var(--tag-color-dessert)}
+.tag-Family-sized {  --tag-color: var(--tag-color-family-sized)}
+.tag-Fish {          --tag-color: var(--tag-color-fish)}
+.tag-Italian {       --tag-color: var(--tag-color-italian)}
+.tag-Korean {        --tag-color: var(--tag-color-korean)}
+.tag-not-a-recipe {  --tag-color: var(--tag-color-notarecipe)}
+.tag-Pasta {         --tag-color: var(--tag-color-pasta)}
+.tag-Vegetarian {    --tag-color: var(--tag-color-vegetarian)}
 
-}
-
-.tag-Family-sized {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-family-sized);
-  outline: 1px solid var(--tag-color-family-sized);
-}
-
-.tag-Dessert {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-dessert);
-  outline: 1px solid var(--tag-color-dessert);
-
-}
-.tag-Drink {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-drink);
-  outline: 1px solid var(--tag-color-drink);
-
-}
-
-.tag-not-a-recipe {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-norecipe);
-  outline: 1px solid var(--tag-color-norecipe);
-}
-
-.tag-Italian {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-italian);
-  outline: 1px solid var(--tag-color-italian);
-
-}
-
-.tag-Alcohol {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-alcohol);
-  outline: 1px solid var(--tag-color-alcohol);
-
-}
-
-.tag-Fish {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-fish);
-  outline: 1px solid var(--tag-color-fish);
-
-}
-
-.tag-Pasta {
-  box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-pasta);
-  outline: 1px solid var(--tag-color-pasta);
-
-}
 
 .inactive {
   box-shadow: var(--box-shadow-length) var(--box-shadow-length) 0px 2px var(--tag-color-inactive);
-  /* border: 1px "solid" var(--tag-color-inactive); */
   color: var(--tag-color-inactive);
   margin-top: 14px;
   transition: margin-top .1s, border 0.1s;
