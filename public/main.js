@@ -70,9 +70,6 @@ tagList.forEach(e => {
     
 });
 
-function showSpinner() {
-    document.querySelector("#tagPostCont").innerHTML = '<div style="text-align:center"><h2>Loading... <span class="spinner">⌛</span></h2></div>';
-}
 
 async function tagCall() {
     response = await fetch ("/tags/tagFind", {
@@ -90,5 +87,14 @@ async function tagCall() {
         let data = await response.json()
         console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
+
+        if(resultCont){
+            const tagArrayString = tagArray.join(", ")
+            if(tagArray.length>0){
+                resultCont.innerHTML=`Showing results with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArrayString}</div> (${data.count})`
+            } else {
+                resultCont.innerHTML="Results:"
+            }
+        }            
     } else console.log("idk man it didn't work")
 }
