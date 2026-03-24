@@ -12,8 +12,8 @@
     <!-- probably some way in the future to make a list of tags automatically-->
     <div style="display: flex; flex-direction: row;">
         <h3 style="margin-right: 10px">Tags:</h3>
+        <!-- rows of tags -->
         <div style="display: flex; flex-direction: column;">
-            <!-- rows of tags -->
             <div id="possibleTagBox" style="display: flex; flex-direction: row;">
                 <div class="tag-cont">
                     <p class="tag tag-Alcohol inactive">Alcohol</p>
@@ -66,13 +66,14 @@
 
     <br>
     
-    <h2 class="st">Results: </h2>
+    <h2 id="resultCont" class="st" style="display:flex; white-space:pre-wrap">Results: </h2>
     <hr>
 
     <div id="tagPostCont">
     <%- include('partials/foundPosts') %>
     </div>
 
+    <!-- deprecated, i don't think this does anything anymore -->
     <% data.forEach(function(post){ %>
         <div class="cont">
             <a class="recipe-card-link" href="/recipes/<%= post.slug %>">

@@ -6,6 +6,9 @@ let response = ""
 const params = new URLSearchParams(window.location.search)
 const urlTags = params.get('tags')
 
+const resultCont = document.getElementById("resultCont")
+
+
 console.log(urlTags)
 if (urlTags) {
     tagArray.push(urlTags)
@@ -28,6 +31,8 @@ tagList.forEach(e => {
             tagArray.push(txt)
         }
 
+
+
         console.log("Valid click: "+ txt)
         e.classList.toggle("inactive")
         e.classList.toggle("get-to-the-top");
@@ -45,9 +50,20 @@ tagList.forEach(e => {
         if (response.ok) {
             console.log("successful api call")
             let data = await response.json()
-            console.log(data)
+            console.log(typeof data)
+            console.log(data.length)
             document.querySelector("#tagPostCont").innerHTML = data.html;
+
+            if(resultCont){
+                const tagArrayString = tagArray.join(", ")
+                if(tagArray.length>0){
+                    resultCont.innerHTML=`Showing results with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArrayString}</div> (${data.count})`
+                } else {
+                    resultCont.innerHTML="Results:"
+                }
+            }            
         } else console.log("idk man it didn't work")
+
 
     })  
 

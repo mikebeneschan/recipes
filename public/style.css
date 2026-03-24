@@ -79,6 +79,7 @@ body {
   --background-recipe-color: #FBFBF9;
   --nav-background-color: #FBFBF9;
   --nav-color: black;
+  --base-color: #3d405b;
 }
 
 .dark-mode {
@@ -89,6 +90,7 @@ body {
   --background-recipe-color: #212332;
   --nav-background-color: #212332;
   --nav-color: white;
+  --base-color: #f4f1de;
 }
 
 .st {

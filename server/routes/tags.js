@@ -20,7 +20,7 @@ tagsRouter.get('/', async (req, res) => {
 tagsRouter.post('/tagFind', async (req,res) => {
     let query = req.body.prompt
     console.log(query)
-    let result = await Post.find({tags: {$all: query}})
+    let result = await Post.find({tags: {$all: query}}).sort({publishDate: 'desc'})
     res.render(
         'partials/foundPosts',
         { 
@@ -29,7 +29,7 @@ tagsRouter.post('/tagFind', async (req,res) => {
         },
         (err, html) => {
         if (err) return res.status(500).send(err);
-        res.json({ html });
+        res.json({ html, count: result.length });
         }
     )
   });
