@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const foundItems = await Post.find().sort({publishDate: 'desc'}).lean().limit(5)
+    // ???
     foundItems.forEach(function(item){ 
     })
     res.render('main', { layout: './layouts/main', data: foundItems});
