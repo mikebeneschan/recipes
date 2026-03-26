@@ -1,6 +1,12 @@
 
 <!-- <h1>Mike's recipes</h1> -->
 <h2 id="subheader">This is the homepage</h2>
+
+<br>
+<div id="hero-cont">
+    <%- include('partials/heroImage') %>
+</div>
+
 <h2>Most recent: </h2>
 <hr>
 <div id="main-cont" style="max-width:90%; margin: 0 auto">
@@ -13,7 +19,7 @@
 <div style="max-width: 80%; margin: 0 auto">
     <div id="icon wrapper" style="display:grid; grid-template-columns:repeat(5,1fr); gap: 80px">
         <div class="hp-icon-cont">
-            <a href="/tags?tags=Breakfast">
+            <a href="/recipe-index?tags=Breakfast">
                 <div class="hp-icon-bg hp-breakfast">
                     <img class="hp-icon" src="/svgs/hp/draw-breakfast.png">
                     <!-- <img class="hp-icon" src="/svgs/hp/donut.svg"> -->
@@ -22,7 +28,7 @@
             </a>
         </div>
         <div class="hp-icon-cont ">
-            <a href="/tags?tags=Sandwiches">
+            <a href="/recipe-index?tags=Sandwiches">
                 <div class="hp-icon-bg hp-lunch">
                     <img class="hp-icon" src="/svgs/hp/draw-lunch.png">
                 </div>
@@ -30,7 +36,7 @@
             </a>
         </div>
         <div class="hp-icon-cont ">
-            <a href="/tags?tags=Family-sized">
+            <a href="/recipe-index?tags=Family-sized">
                 <div class="hp-icon-bg hp-dinner">
                     <img class="hp-icon" src="/svgs/hp/draw-dinner.png">
                 </div>
@@ -38,7 +44,7 @@
             </a>
         </div>
         <div class="hp-icon-cont ">
-            <a href="/tags?tags=Dessert">
+            <a href="/recipe-index?tags=Dessert">
                 <div class="hp-icon-bg hp-dessert">
                     <img class="hp-icon" src="/svgs/hp/draw-dessert.png">
                 </div>
@@ -46,7 +52,7 @@
             </a>
         </div>
         <div class="hp-icon-cont ">
-            <a href="/tags?tags=Drink">
+            <a href="/recipe-index?tags=Drink">
                 <div class="hp-icon-bg hp-drink">
                     <img class="hp-icon" src="/svgs/hp/draw-drink.png">
                 </div>

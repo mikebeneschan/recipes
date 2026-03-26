@@ -5,10 +5,14 @@ const router = express.Router();
 // homepage
 router.get('/', async (req, res) => {
   try {
-    const foundItems = await Post.find().sort({publishDate: 'desc'}).lean().limit(5)
+    const heroArray = await Post.find().sort({publishDate: 'desc'}).limit(1)
+    const hero = heroArray[0]
+    const foundItems = await Post.find().sort({publishDate: 'desc'}).lean().skip(1).limit(4)
+    // ???
+    // const hero=0
     foundItems.forEach(function(item){ 
     })
-    res.render('main', { layout: './layouts/main', data: foundItems});
+    res.render('main', { layout: './layouts/main', data: foundItems, hero: hero});
   } catch (error) {
      console.log(error);
   }
@@ -53,7 +57,7 @@ router.get('/contact', (req, res) => {
 router.post('/posts', async (req,res) => {
     let query = req.body.prompt
     console.log("query:" +query)
-    let result = await Post.find().limit(query).sort({publishDate: 'desc'}).lean()
+    let result = await Post.find().limit(query).skip(1).sort({publishDate: 'desc'}).lean()
     res.render(
         'partials/foundPosts',
         { 

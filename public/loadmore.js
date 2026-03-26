@@ -1,13 +1,13 @@
 console.log("loadmore.js loaded")
 
-let postNumber = 5
+let postNumber = 4
 let response = ""
 
 const loadMore = document.querySelector("#loadMore")
 loadMore.addEventListener("click", async () => {
     postNumber += 5;
 
-    console.log("PostNumber = "+ postNumber)
+    // console.log("PostNumber = "+ postNumber)
 
     
     response = await fetch ("/posts", {

@@ -10,7 +10,8 @@ tagsRouter.get('/', async (req, res) => {
         res.render('tags', {
         layout: './layouts/main',
         title: 'Tags',
-        data: d
+        data: d,
+        q: 0
         });
     } catch(error) {
         console.log(error);
@@ -19,8 +20,25 @@ tagsRouter.get('/', async (req, res) => {
  
 tagsRouter.post('/tagFind', async (req,res) => {
     let query = req.body.prompt
-    console.log(query)
+    // console.log("tags.js--tagFind query:"+query)
+    // console.log("tags.js--typeof query: "+query.length)
     let result = await Post.find({tags: {$all: query}}).sort({publishDate: 'desc'})
+    res.render(
+        'partials/foundPosts',
+        { 
+            data: result,
+            layout: false,
+            q: query.length 
+        },
+        (err, html) => {
+        if (err) return res.status(500).send(err);
+        res.json({ html, count: result.length });
+        }
+    )
+});
+
+tagsRouter.post('/renderAllPosts', async (req,res) => {
+    let result = await Post.find().sort({publishDate: 'desc'}).lean()
     res.render(
         'partials/foundPosts',
         { 
@@ -29,9 +47,9 @@ tagsRouter.post('/tagFind', async (req,res) => {
         },
         (err, html) => {
         if (err) return res.status(500).send(err);
-        res.json({ html, count: result.length });
+        res.json({ html });
         }
     )
-  });
+});
 
 export default tagsRouter;

@@ -37,15 +37,25 @@ tagList.forEach(e => {
         e.classList.toggle("inactive")
         e.classList.toggle("get-to-the-top");
 
-        response = await fetch ("/tags/tagFind", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                prompt: tagArray,
-            }),
-        })
+        // change response to show all recipes if there are no tags selected
+        if(tagArray.length===0){
+            response = await fetch ("/recipe-index/renderAllPosts", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })        
+        } else {
+            response = await fetch ("/recipe-index/tagFind", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    prompt: tagArray,
+                }),
+            })
+        }
 
         if (response.ok) {
             console.log("successful api call")
@@ -59,7 +69,7 @@ tagList.forEach(e => {
                 if(tagArray.length>0){
                     resultCont.innerHTML=`Showing results with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArrayString}</div> (${data.count})`
                 } else {
-                    resultCont.innerHTML="Results:"
+                    resultCont.innerHTML="Recipes:"
                 }
             }            
         } else console.log("idk man it didn't work")
@@ -70,25 +80,42 @@ tagList.forEach(e => {
     
 });
 
-function showSpinner() {
-    document.querySelector("#tagPostCont").innerHTML = '<div style="text-align:center"><h2>Loading... <span class="spinner">⌛</span></h2></div>';
-}
 
 async function tagCall() {
-    response = await fetch ("/tags/tagFind", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            prompt: tagArray,
-        }),
-    })
+
+    // change response to show all recipes if there are no tags selected
+    if(tagArray.length===0){
+        response = await fetch ("/recipe-index/renderAllPosts", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })        
+    } else {
+        response = await fetch ("/recipe-index/tagFind", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                prompt: tagArray,
+            }),
+        })
+    }
 
     if (response.ok) {
         console.log("successful api call")
         let data = await response.json()
         console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
+
+        if(resultCont){
+            const tagArrayString = tagArray.join(", ")
+            if(tagArray.length>0){
+                resultCont.innerHTML=`Showing results with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArrayString}</div> (${data.count})`
+            } else {
+                resultCont.innerHTML="Recipes:"
+            }
+        }            
     } else console.log("idk man it didn't work")
-}
+} 

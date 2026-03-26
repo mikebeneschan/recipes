@@ -27,7 +27,7 @@ app.set('layout', './layouts/main');
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-app.use('/tags', tagsRouter);
+app.use('/recipe-index', tagsRouter);
 app.use('/', router);
 
 
