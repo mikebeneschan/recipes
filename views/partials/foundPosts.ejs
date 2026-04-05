@@ -9,22 +9,22 @@
 <% data.forEach(function(post){ %>
         <div class="cont">
             <a class="recipe-card-link" href="/recipes/<%= post.slug %>">
-               <li style="display: flex; flex-direction:row">
+               <li id="found-post">
                     <div>
                         <a style=" font-size: 28px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
                         <% if(post.subtitle){ %>
                         <p class="st" style="font-size: 18px"><%=post.subtitle%></p>
                         <% } %>
-                        <div style="position: absolute;">
-                        <div style="display: flex; flex-direction:row">
-                            <% post.tags.forEach(function(tag){ %>
-                                <div class="tag-cont" style="opacity:1">
-                                <a class="no-bold" href="/recipe-index?tags=<%- tag %>">
-                                <p class="tag tag-<%- tag %>"><%- tag %></p>
-                                </a>
-                                </div>
-                            <% }) %>
-                        </div> 
+                        <div id="fp-tag-cont">
+                            <div style="display: flex; flex-direction:row">
+                                <% post.tags.forEach(function(tag){ %>
+                                    <div class="tag-cont" style="opacity:1">
+                                    <a class="no-bold" href="/recipe-index?tags=<%- tag %>">
+                                    <p class="tag tag-<%- tag %>"><%- tag %></p>
+                                    </a>
+                                    </div>
+                                <% }) %>
+                            </div> 
                         </div>
                     </div>
                     <div class="img-cont img-hp" style="margin-left: auto;">
