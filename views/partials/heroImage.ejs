@@ -1,23 +1,13 @@
 <a class="recipe-card-link" href="/recipes/<%= hero.slug %>">
     <li style="display: flex; flex-direction:row">
         <div class="hero-textbox">
-            <a style=" font-size: 50px; font-weight:600; line-height: 26px;" href="/recipes/<%= hero.slug %>"><%=hero.title%></a>
+            <a id="hero-title-text" style=" font-size: 50px; font-weight:600; line-height: 26px;" href="/recipes/<%= hero.slug %>"><%=hero.title%></a>
             <% if(hero.subtitle){ %>
             <p class="st" style="font-size: 23px"><%=hero.subtitle%></p>
             <% } %>
-            <!-- <div style="display:flex; flex-direction: row; ">
-            <% hero.tags.forEach(function(tag){ %>
-
-                <div class="tag-cont">
-                <a class="no-bold" href="/recipe-index?tags=<%- tag %>">
-                <p class="tag tag-<%- tag %>"><%- tag %></p>
-                </a>
-                </div>
-            <% }) %>
-            </div>              -->
         </div>
         <div class="img-cont img-hero" style="margin-left: auto;">
-            <img class="foodpic" src = "/images/<%= hero.image %>">
+            <img class="foodpic" src = "<%= hero.image %>">
         </div>
     </li>
 </a>

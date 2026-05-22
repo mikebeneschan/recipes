@@ -29,7 +29,7 @@
       <% }) %>
     </div> 
     <div style="position: relative">
-      <img id="mainimg" src = "/images/<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 10px;">
+      <img id="mainimg" src = "<%= data.image %>" aspect-ratio=1 height="400px" style="margin-top: 10px;">
       <!-- <img id="sneaky" class= "gerald1" src="/images/sneakygerald.png"> -->
     </div>
     <p><%- data.content %></p>
@@ -47,7 +47,7 @@
             <% } %>
           </div>
           <div class="img-cont" style="margin-left: auto;">
-              <img class="foodpic" style="border-radius: 12px;" src = "/images/<%= data.image %>">
+              <img class="foodpic" style="border-radius: 12px;" src = "<%= data.image %>">
           </div>
         </div>
         <h3>Ingredients</h3>
