@@ -145,6 +145,11 @@ nav {
   background: var(--nav-background-color);
 }
 
+.navlink {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
 /* HOMEPAGE HERO CONTAINER */
 .img-cont {
   --img-width: 200px;
