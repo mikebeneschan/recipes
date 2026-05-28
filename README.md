@@ -17,7 +17,30 @@ This is the source code I wrote for a cooking blog where I share recipes and coo
 
 * Admin-side: Electron (+HTML, CSS, Vanilla JS), Dillinger 
 
+The website is currently hosted via OnRender.
+
 Currently, recipe content is written in Markdown, then manually converted to HTML with [Dillinger.io](http://Dillinger.io).
 
 AI tools were not used for any part of this project.
 
+## Features
+
+- Darkmode support
+- Mobile view support
+- Robust tag search system, allowing the user to filter recipes by one or multiple tags
+- Support for multiple versions of recipes displayed on the same page (i.e. a vegetarian version and a non-vegetarian version)
+
+## Post Schema
+
+A post contains the following data:
+
+- Title (required)
+- Content as HTML (required)
+- Subtitle
+- Slug
+- Tags (as an array)
+- Publish date
+- Image (as URL)
+- An array of recipeCardSchema objects
+
+Recipe cards contain the following data:
