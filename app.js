@@ -22,8 +22,8 @@ startServer();
 app.use(express.static('public'));
 
 app.use(expressLayouts);
-app.use(express.json())
-app.set('layout', './layouts/main');
+app.use(express.json()) // required for tags page
+// app.set('layout', './layouts/main');
 app.set('views', './views');
 app.set('view engine', 'ejs');
 

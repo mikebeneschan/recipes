@@ -8,10 +8,8 @@ router.get('/', async (req, res) => {
     const heroArray = await Post.find().sort({publishDate: 'desc'}).limit(1)
     const hero = heroArray[0]
     const foundItems = await Post.find().sort({publishDate: 'desc'}).lean().skip(1).limit(4)
-    // ???
-    // const hero=0
-    foundItems.forEach(function(item){ 
-    })
+    // foundItems.forEach(function(item){ 
+    // })
     res.render('main', { layout: './layouts/main', data: foundItems, hero: hero});
   } catch (error) {
      console.log(error);
@@ -22,7 +20,6 @@ router.get('/', async (req, res) => {
 router.get('/recipes/:slug', async (req,res) => {
   const {slug} = req.params
   const result = await Post.findOne({ slug })
-  // let layout = './layouts/post'
   console.log(result.tags)
   let layout = ''
   if (result.tags.includes('Not a recipe')){ 
