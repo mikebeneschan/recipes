@@ -30,17 +30,42 @@ AI tools were not used for any part of this project.
 - Robust tag search system, allowing the user to filter recipes by one or multiple tags
 - Support for multiple versions of recipes displayed on the same page (i.e. a vegetarian version and a non-vegetarian version)
 
+## Basic overview of the tech stack
+### Front-end
+EJS templates are used to standardize UI layouts and create reusable UI blocks. For example, the "foundposts" partial is utilized by both the home page and the tags page.
+
+Vanilla CSS is the only styling used in this project (i.e. no use of Tailwind or post-CSS processing)
+
+### Back-end
+Vite is used as the project's build tool.
+
+MongoDB is used to store all data on individual recipes (no actual recipe data is stored in this source code). “Image” is stored as a URL, and images for mikeb.cooking are hosted via Google Firebase Storage.
+
+Express is mainly used for routing HTTP requests and server-side view rendering via EJS (In other words, Express makes sure the user is directed to the correct page and loads the correct EJS templates). Additionally, Express handles several API endpoints. For example, the "tagFind" endpoint, which is used on the tags page, queries the MongoDB collection for documents with tags that match the selected tags.
+
 ## Post Schema
 
-A post contains the following data:
-
+Each post (each document in MongoDB) utilizes the PostSchema, which contains the following data:
 - Title (required)
 - Content as HTML (required)
 - Subtitle
 - Slug
 - Tags (as an array)
-- Publish date
+- Publish date (by default, this is the upload time)
 - Image (as URL)
 - An array of recipeCardSchema objects
 
-Recipe cards contain the following data:
+Each recipe card is defined by a recipeCardSchema object, which contains the following data:
+- Label (the title that appears on the recipe card)
+- Serving Size
+- Procedure (as an array)
+- An array of ingredientSchema objects
+
+Finally, each section of ingredients within a recipe card utilizes an ingredientSchema object, which contains the following data:
+- The ingredient section name
+- Ingredients (as an array)
+
+
+## Writing new recipes
+Writing new recipes are handled via a separate Electron app. While not an ideal solution, this solution was chosen in the interest of security and as a result of the limitations of OnRender's free hosting plan. 
+
