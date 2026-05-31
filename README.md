@@ -39,7 +39,7 @@ Vanilla CSS is the only styling used in this project (i.e. no use of Tailwind or
 ### Back-end
 Vite is used as the project's build tool.
 
-MongoDB is used to store all data on individual recipes (no actual recipe data is stored in this source code). “Image” is stored as a URL, and images for mikeb.cooking are hosted via Google Firebase Storage.
+MongoDB is used to store all data on individual recipes (no actual recipe data is stored in this source code). Image URLs are stored in MongoDB, and the actual image files for mikeb.cooking are hosted via Google Firebase Storage.
 
 Express is mainly used for routing HTTP requests and server-side view rendering via EJS (In other words, Express makes sure the user is directed to the correct page and loads the correct EJS templates). Additionally, Express handles several API endpoints. For example, the "tagFind" endpoint, which is used on the tags page, queries the MongoDB collection for documents with tags that match the selected tags.
 
