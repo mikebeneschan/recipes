@@ -41,7 +41,7 @@ Vite is used as the project's build tool.
 
 MongoDB is used to store all data on individual recipes (in other words, no actual recipe data is stored in this source code). Image URLs are stored in MongoDB, and the actual image files for mikeb.cooking are hosted via Google Firebase Storage.
 
-Express is mainly used for routing HTTP requests and server-side view rendering via EJS (In other words, Express makes sure the user is directed to the correct page and loads the correct EJS templates). Additionally, Express handles several API endpoints. For example, the "tagFind" endpoint, which is used on the tags page, queries the MongoDB collection for documents with tags that match the selected tags.
+Express is mainly used for routing HTTP requests and server-side view rendering via EJS (In other words, Express makes sure the user is directed to the correct page and loads the correct EJS templates). Additionally, Express is used to provide several server endpoints. For example, the "tagFind" endpoint queries the MongoDB collection for documents based on a specified array of tags, and returns a partial HTML layout that is then rendered on the tags page.
 
 Node is used as the server-side runtime for this project, and helps bridge the other technologies. In this case, Node connects to MongoDB, runs the Express app in app.js, and serves EJS templates into the Express app. 
 
@@ -69,6 +69,14 @@ Finally, each section of ingredients within a recipe card utilizes an ingredient
 
 The reason we use recipeCardSchema objects and ingredientSchema objects, instead of putting all data into the postSchema object, is that this grants us the flexibility to include multiple ingredient sections or recipe cards. For example, having an array of recipeCardSchema objects means we can store several recipe cards for vegetarian, non-vegetarian, gluten-free, etc. versions. Similarly, we can include multiple ingredientSchema sections when we want several distinct sections of ingredients. For example, the [Red Velvet Cream Cheese Donuts](https://mikeb.cooking/recipes/red-velvet-donuts) recipe has two different ingredient sections: one for batter and one for glaze. 
 
+## Darkmode
+Darkmode preferences are stored locally on the user's browser/device, meaning preferences are preserved if the user closes the page and returns.
+
+## How the tags page works 
+When the tags page is loaded, an empty array ("tagArray") is created. Query paramaters are first added to the array if they exist (When a user clicks on a tag button on a post, the tags page is loaded with that tag's name as a query paramater). If there are query paramaters, the tagFind server endpoint is called, which queries mongoDB and returns an EJS partial based on the results. If there are no query paramaters, then all posts are rendered in reverse-chronological order via the renderAllPosts server endpoint.
+
+When a tag button is clicked, that tag is either added or removed from the tagArray based on whether it is already inside the tagArray. Afterwards, the tagFind endpoint is called and the EJS partial is loaded onto the page. 
+
 ## Writing new recipes
-Writing new recipes are handled via a separate Electron app. While not an ideal solution, this solution was chosen in the interest of security and as a result of the limitations of Render's free hosting plan. 
+Writing new recipes are handled via a separate Electron app. The source code for that app can be found [here](https://github.com/mikebeneschan/mbc-recipewriter). While not an ideal solution, this solution was chosen in the interest of security and as a result of the limitations of Render's free hosting plan. See [this section](https://github.com/mikebeneschan/mbc-recipewriter) of the app's README for more info. 
 
