@@ -28,7 +28,7 @@ const postSchema = new Schema({
     image:{type:String},
     // servingSize: {type:String}
     recipeCards:{type:[recipeCardSchema]}
-})
+}, { collection: 'posts'})
 
 const Post = model('Post', postSchema)
 

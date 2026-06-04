@@ -19,8 +19,8 @@ const enableDarkMode = () => {
     }
     if (banner) {
         banner.innerHTML = `
-            <img id="banner" class="banner" src = "/images/header-dm.png" style = "height:100px; z-index:2" alt="Mike B. Cooking">
-            <img id="bannerAni" class="banner" src = "/images/header-dm-ani.gif" style = "height:100px; z-index:1; opacity:0" alt="Mike B. Cooking">
+            <img id="banner" class="banner" src = "/images/header-dm.png" style = "z-index:2" alt="Mike B. Cooking">
+            <img id="bannerAni" class="banner" src = "/images/header-dm-ani.gif" style = "z-index:1; opacity:0" alt="Mike B. Cooking">
         `
     }
     bannerAnimation()
@@ -45,8 +45,8 @@ const disableDarkMode = () => {
     }
     if (banner) {
         banner.innerHTML = `
-            <img id="banner" class="banner" src = "/images/header-lm.png" style = "height:100px; z-index:2" alt="Mike B. Cooking">
-            <img id="bannerAni" class="banner" src = "/images/header-lm-ani.gif" style = "height:100px; z-index:1; opacity:0" alt="Mike B. Cooking">
+            <img id="banner" class="banner" src = "/images/header-lm.png" style = "z-index:2" alt="Mike B. Cooking">
+            <img id="bannerAni" class="banner" src = "/images/header-lm-ani.gif" style = "z-index:1; opacity:0" alt="Mike B. Cooking">
             
         `
     }
