@@ -9,22 +9,15 @@ Disallow: /nogooglebot/
 
 User-agent: *
 Sitemap: https://garbageday.email/sitemap.xml
-Disallow: /login
-
-User-agent: adsbot-google
-Disallow: /login
 
 User-agent: Nutch
 Disallow: /
 
 User-agent: AhrefsBot
 Crawl-delay: 10
-Disallow: /login
 
 User-agent: AhrefsSiteAudit
 Crawl-delay: 10
-Disallow: /login
 
 User-agent: MJ12bot
 Crawl-Delay: 10
-Disallow: /login
