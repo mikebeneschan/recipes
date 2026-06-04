@@ -283,6 +283,14 @@ input:checked + .slider:before {
 }
 
 
+nav {
+  top: 4px;
+  color: var(--nav-color);
+  border-radius: 12px;
+  /* width: fit-content; */
+  padding: 0px;
+  /* background: var(--nav-background-color); */
+}
 
 header {
   top: 4px;
@@ -291,6 +299,14 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.header-hr {
+  min-width: 1000px;
+  border: 0;
+  height: 0;
+  opacity: 50%;
+  border-top: 1px solid var(--base-color);
 }
 
 strong {
@@ -452,8 +468,7 @@ p a {
 .banner {
   grid-column: 1;
   grid-row: 1;
-  max-height:100px;
-  max-width:100%;
+  margin-bottom: 10px;
 }
 
 .hp-icon-cont {
