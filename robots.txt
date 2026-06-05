@@ -7,9 +7,6 @@ Disallow: /
 User-agent: Googlebot
 Disallow: /nogooglebot/
 
-User-agent: *
-Sitemap: https://garbageday.email/sitemap.xml
-
 User-agent: Nutch
 Disallow: /
 
