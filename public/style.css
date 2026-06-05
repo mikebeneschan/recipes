@@ -327,7 +327,7 @@ button {
     width: 120px;
     font-family: "DM Sans";
     font-size: 16px;
-    background-color: var(--link-color);
+    background-color: #456958;
     border-radius: 10px;
     border: none;
     box-shadow: 0px 0px 0px 0px var(--link-color);
