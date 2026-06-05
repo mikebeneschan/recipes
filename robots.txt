@@ -1,5 +1,6 @@
 # what if i told you this is just beehiiv's default robots.txt file
 # hi mom
+#
 
 User-agent: Amazonbot
 Disallow: /
