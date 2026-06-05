@@ -142,7 +142,7 @@ nav {
   border-radius: 12px;
   /* width: fit-content; */
   padding: 0px;
-  background: var(--nav-background-color);
+  /* background: var(--nav-background-color); */
 }
 
 .navlink {
@@ -273,6 +273,10 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+input {
+  text-indent: 5px;
+}
+
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -321,13 +325,13 @@ button {
     align-content: center;
     height: 40px;
     width: 120px;
+    font-family: "DM Sans";
     font-size: 16px;
     background-color: var(--link-color);
     border-radius: 10px;
     border: none;
     box-shadow: 0px 0px 0px 0px var(--link-color);
     transition: background-color .1s
-
 }
 
 button:hover {
@@ -469,6 +473,9 @@ p a {
   grid-column: 1;
   grid-row: 1;
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 
 .hp-icon-cont {
