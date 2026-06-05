@@ -1,0 +1,20 @@
+# what if i told you this is just beehiiv's default robots.txt file
+# hi mom
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: Nutch
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: AhrefsSiteAudit
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-Delay: 10
