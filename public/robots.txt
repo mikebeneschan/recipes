@@ -1,5 +1,8 @@
-# what if i told you this is just beehiiv's default robots.txt file
 # hi mom
+
+User-agent: *
+Sitemap: https://mikeb.cooking/sitemap.xml
+Disallow: /embarrassing-photo-of-spongebob-at-the-christmas-party/
 
 User-agent: Amazonbot
 Disallow: /
