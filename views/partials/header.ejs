@@ -24,8 +24,11 @@
     <div><a href="/" class="navlink"> Home</a>|</div>
     <div><a href="/about" class="navlink"> About</a>|</div>
     <div><a href="/recipe-index" class="navlink"> All Recipes</a>|</div>
-    <div><a href="/contact" class="navlink"> Contact</a> </div>
-
+    <div><a href="/contact" class="navlink"> Contact</a>| </div>
+  <form id="searchform" class="search2" method="get" action="source.html">
+    <input id="searchinput" type="text" name="search" size="10" maxlength="255" placeholder="">
+    <!-- <button type="submit" style="height: auto; font-size: 15px; width: auto; padding-left: 10px; padding-right: 10px; border-radius: 15px; vertical-align: middle">Search</button> -->
+  </form>
   </nav>
   <hr class="header-hr">
 </header>
@@ -41,4 +44,10 @@
     bannerAni.style.opacity="0"
 
   })
+</script>
+<script type="text/javascript">
+document.getElementById('searchform').onsubmit = function() {
+    window.location = 'http://www.duckduckgo.com/search?q=site:https://mikeb.cooking/ ' + document.getElementById('searchinput').value;
+    return false;
+}
 </script>
