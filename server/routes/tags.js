@@ -11,7 +11,8 @@ tagsRouter.get('/', async (req, res) => {
         layout: './layouts/main',
         title: 'Tags',
         data: d,
-        q: 0
+        q: 0,
+        desc: "tags"
         });
     } catch(error) {
         console.log(error);
