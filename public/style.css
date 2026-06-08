@@ -302,7 +302,7 @@ header {
 }
 
 .header-hr {
-  min-width: 1000px;
+  min-width: min(1000px, 100%);
   border: 0;
   height: 0;
   opacity: 50%;
