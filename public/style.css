@@ -602,23 +602,37 @@ p a {
   }
 }
 
-#searchinput {
+#searchformNav {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1px;
+}
+
+
+
+#searchinputNav {
+  margin-left: 10px;
+  border-radius: 12px;
+  height: 22px;
+  text-indent: 19px;
+  width: 150px;
+}
+
+#searchinputBig {
+  border-radius: 6px;
+  height: 35px;
+  margin-bottom: 20px;
+  text-indent: 35px;
+  width: 50%;
+  font-size: 18px;
+}
+
+
+.searchbar {
   background: url("../svgs/search.svg") 3px / contain no-repeat;
   color: black;
   background-color: white;
-  border-radius: 12px;
-  margin-left: 10px;
   border: 1px solid var(--link-color);
-  height: 22px;
   vertical-align: middle;
-  text-indent: 19px;
   font-family: 'DM Sans';
-  width: 100px;
-}
-
-#searchform {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  margin-top: 1px;
 }

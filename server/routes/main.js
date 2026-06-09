@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const foundItems = await Post.find().sort({publishDate: 'desc'}).lean().skip(1).limit(4)
     // foundItems.forEach(function(item){ 
     // })
-    res.render('main', { layout: './layouts/main', data: foundItems, hero: hero});
+    res.render('main', { layout: './layouts/main', data: foundItems, hero: hero, desc: "homepage!!!"});
   } catch (error) {
      console.log(error);
   }
@@ -38,7 +38,8 @@ router.get('/recipes/:slug', async (req,res) => {
 router.get('/about', (req, res) => {
   res.render('about', {
     layout: './layouts/main',
-    title: 'About Me'
+    title: 'About Me',
+    desc: "About Mike, the guy who made this website"
   });
 });
 
@@ -46,7 +47,8 @@ router.get('/about', (req, res) => {
 router.get('/contact', (req, res) => {
   res.render('contact', {
     layout: './layouts/main',
-    title: 'Contact'
+    title: 'Contact',
+    desc: "The contact page"
   });
 });
 
