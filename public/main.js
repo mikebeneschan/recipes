@@ -134,7 +134,6 @@ async function searchCall(query) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-        // hard-coded for testing
             prompt: query,
         }),        
     })
@@ -146,7 +145,7 @@ async function searchCall(query) {
         document.querySelector("#tagPostCont").innerHTML = data.html;
 
         if(resultCont){
-            resultCont.innerHTML=`Showing search results for <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${query}</div> (${data.count})`
+            resultCont.innerHTML=`Showing results for <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">\"${query}\"</div> (${data.count})`
         }            
     } else console.log("idk man it didn't work")
 }
