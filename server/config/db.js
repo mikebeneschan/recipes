@@ -11,13 +11,15 @@ const indexCheck = async () => {
         const index = {
             name: "searchv1",
             definition: {
+                analyzer: "lucene.english",
                 mappings: {
                     dynamic: false,
                     fields: {
                         title: { type: 'string' },
                         subtitle: { type: 'string' },
                         content: { type: 'string' },
-                        tags: {type: 'string'}
+                        tags: {type: 'string'},
+                        recipeCards: {type: 'string'}
                     }
                 }
             }

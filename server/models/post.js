@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 const {Schema, model} = mongoose;
 
-//
 const ingredientSchema = new Schema({
     sectionName:{type: String},
     ings:{type:[String]}
@@ -19,14 +18,10 @@ const postSchema = new Schema({
     title:{type:String, required:true},
     subtitle:{type:String},
     content:{type:String, required:true},
-    // section:{type:String},
     slug:{type:String, unique:true, required:false},
-    // ingredients:{type:[String], required:false},
-    // procedure:{type:[String], required:false},
     tags:{type:[String], required:false},
     publishDate:{type:Date, default:Date.now},
     image:{type:String},
-    // servingSize: {type:String}
     recipeCards:{type:[recipeCardSchema]}
 }, { collection: 'posts'})
 
