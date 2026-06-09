@@ -25,7 +25,7 @@ tagsRouter.post('/search', async (req,res) => {
                 "index": "searchv1",
                 "text": {
                     "query": query,
-                    "path": ["title","subtitle","content","tags"]
+                    "path": ["title","subtitle","content","tags","recipeCards"]
                 }
             }
         }

@@ -6,9 +6,15 @@ let searchQuery = ""
 
 const params = new URLSearchParams(window.location.search)
 const urlTags = params.get('tags')
+const initialQuery = params.get('q')
 
 const resultCont = document.getElementById("resultCont")
+const searchInput = document.getElementById('searchinputBig')
 
+if (initialQuery) {
+    searchInput.value = initialQuery
+    searchCall(initialQuery)
+}
 
 console.log(urlTags)
 if (urlTags) {
@@ -45,7 +51,7 @@ tagList.forEach(e => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-            })        
+            })       
         } else {
             response = await fetch ("/recipe-index/tagFind", {
                 method: 'POST',
@@ -85,7 +91,7 @@ tagList.forEach(e => {
 async function tagCall() {
 
     // change response to show all recipes if there are no tags selected
-    if(tagArray.length===0){
+    if(tagArray.length===0 && !initialQuery){
         response = await fetch ("/recipe-index/renderAllPosts", {
             method: 'POST',
             headers: {
@@ -146,10 +152,11 @@ async function searchCall(query) {
 }
 
 document.getElementById('searchformBig').onsubmit = function() {
-    let q = document.getElementById('searchinputBig').value;
+    let q = searchInput.value;
     if (q){
         console.log(q)
         searchCall(q)
     }
     return false;
 }
+
