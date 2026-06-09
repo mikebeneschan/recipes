@@ -8,7 +8,11 @@
 </head>
 <body>
     <h1>All Recipes</h1>
-    <h2 class="st">Click on these tags</h2>
+    <h2 class="st">Search for a post</h2>
+    <form id="searchformBig">
+        <input id="searchinputBig" class="searchbar" type="text" name="search" size="10" maxlength="255" placeholder="">
+    </form>
+    <h2 class="st">Filter by tags</h2>
     <!-- probably some way in the future to make a list of tags automatically-->
     <div style="display: flex; flex-direction: row;">
         <h3 style="margin-right: 10px">Tags:</h3>
@@ -75,28 +79,6 @@
     <%- include('partials/foundPosts') %>
     </div>
 
-    <!-- deprecated, i don't think this does anything anymore -->
-    <% data.forEach(function(post){ %>
-        <div class="cont">
-            <a class="recipe-card-link" href="/recipes/<%= post.slug %>">
-               <li style="display: flex; flex-direction:row">
-                    <div>
-                        <a style=" font-size: 19px; line-height: 26px;" href="/recipes/<%= post.slug %>"><%=post.title%></a>
-                        <% if(post.subtitle){ %>
-                        <p class="st"><%=post.subtitle%></p>
-                        <% } %>
-                    </div>
-                    <div class="img-cont" style="margin-left: auto;">
-                        <img class="foodpic" src = "/images/<%= post.image %>">
-                    </div>
-    
-                </li>
-    
-                </a>
-            </div>
-    
-            <hr style="margin-top: 20px">
-    <% }) %>
 
 </body>
 <script type="module", src="../main.js"></script>

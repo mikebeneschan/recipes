@@ -2,6 +2,7 @@ console.log("main.js from public loaded")
 
 const tagArray = []
 let response = ""
+let searchQuery = ""
 
 const params = new URLSearchParams(window.location.search)
 const urlTags = params.get('tags')
@@ -119,3 +120,36 @@ async function tagCall() {
         }            
     } else console.log("idk man it didn't work")
 } 
+
+async function searchCall(query) {
+    response = await fetch ("/recipe-index/search", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+        // hard-coded for testing
+            prompt: query,
+        }),        
+    })
+
+    if (response.ok) {
+        console.log("successful search call")
+        let data = await response.json()
+        console.log(data)
+        document.querySelector("#tagPostCont").innerHTML = data.html;
+
+        if(resultCont){
+            resultCont.innerHTML=`Showing search results for <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${query}</div> (${data.count})`
+        }            
+    } else console.log("idk man it didn't work")
+}
+
+document.getElementById('searchformBig').onsubmit = function() {
+    let q = document.getElementById('searchinputBig').value;
+    if (q){
+        console.log(q)
+        searchCall(q)
+    }
+    return false;
+}
