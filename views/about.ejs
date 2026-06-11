@@ -12,11 +12,29 @@
     
     <h2>Boring stuff for nerds</h2>
     <h3>Changelog</h3>
+    <h4>Version: 1.08a (June 11 2026)</h4>
+    <ul>
+        <li>Fixed bug where a search with tags + empty query would sometimes break the page</li>
+        <li>Fixed bug where a search with an empty query would sometimes show as "undefined"</li>
+    </ul>
     <h4>Version: 1.08 (June 8 2026)</h4>
     <ul>
-        <li>Search bar added (although functionality is still kind of up in the air)</li>
-        <li>Robots.txt and sitemap.xml added for SEO purposes</li>
-        <li>The header got some styling updates</li>
+        <li>This is the search update! Search functionality has now been added through MongoDB Atlas's search index feature. Some notes on the feature:</li>
+        <ul>
+            <li>Search bar added to the nav bar!</li>
+            <li>Search bar also added to the <a href="/recipe-index">all recipes</a> page.</li>
+            <li>Swapped analyzer to lucene.english. The main advantage of this is that singular/plural words are treated as equivalent (i.e. searching for "lemon" or "lemons" will give you the same results)</li>
+            <li>Tag filters are still functional and can be used in tandem with search</li>
+            <li>Autocomplete is available on recipe titles (i.e. searching for "yogur" will fetch results for "yogurt" if that is in the title)</li>
+            <li>Synonym mappings added for some key words (i.e. searching for "green onion" and "scallion" will yield the same results)</li>
+            <li>Some input handling has been added for empty searches and searches containing only stop words (like "the" or "an")</li>
+        </ul>
+        <li>Other changes:</li>
+        <ul>
+            <li>Robots.txt and sitemap.xml files added for SEO purposes</li>
+            <li>The navbar got some styling updates, mostly so it looks nicer on mobile</li>
+            
+        </ul>
     </ul>
     <h4>Version: 1.07 (May 20 2026)</h4>
     <ul>

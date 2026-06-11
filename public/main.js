@@ -39,9 +39,6 @@ tagList.forEach(e => {
             tagArray.push(txt)
         }
 
-
-
-        console.log("Valid click: "+ txt)
         e.classList.toggle("inactive")
         e.classList.toggle("get-to-the-top");
 
@@ -51,6 +48,8 @@ tagList.forEach(e => {
         } else {
             tagCall()
         }
+        console.log(tagArray)
+
     })  
 
     
@@ -61,8 +60,10 @@ document.getElementById('searchformBig').onsubmit = function() {
     if (q){
         console.log(q)
         searchCall(q)
-    } else {
+    } else if (!q && tagArray.length===0) {
         renderAll()
+    } else {
+        tagCall()
     }
     return false;
 }
@@ -73,6 +74,7 @@ async function tagCall() {
     // change response to show all recipes if there are no tags selected
     if(tagArray.length===0 && !initialQuery){
         renderAll()
+        return
     } else {
         response = await fetch ("/recipe-index/tagFind", {
             method: 'POST',
@@ -86,9 +88,7 @@ async function tagCall() {
     }
 
     if (response.ok) {
-        console.log("successful api call")
         let data = await response.json()
-        console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
 
         if(resultCont){
@@ -117,7 +117,6 @@ async function searchCall(query) {
     if (response.ok) {
         console.log("successful search call")
         let data = await response.json()
-        console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
 
         if(resultCont){
@@ -135,9 +134,7 @@ async function renderAll() {
         },
     })
     if (response.ok) {
-        console.log("successful api call")
         let data = await response.json()
-        console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
 
         if(resultCont){
