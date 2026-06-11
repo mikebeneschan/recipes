@@ -10,13 +10,14 @@ const initialQuery = params.get('q')
 
 const resultCont = document.getElementById("resultCont")
 const searchInput = document.getElementById('searchinputBig')
+const tagList = document.querySelectorAll(".tag")
+
 
 if (initialQuery) {
     searchInput.value = initialQuery
     searchCall(initialQuery)
 }
 
-console.log(urlTags)
 if (urlTags) {
     tagArray.push(urlTags)
     const tup = document.querySelector(".tag-"+urlTags)
@@ -26,7 +27,7 @@ if (urlTags) {
 }
 tagCall()
 
-const tagList = document.querySelectorAll(".tag")
+// event listeners
 tagList.forEach(e => {
     e.addEventListener("click", async (obj) => {
         let txt = obj.target.textContent
@@ -38,66 +39,42 @@ tagList.forEach(e => {
             tagArray.push(txt)
         }
 
-
-
-        console.log("Valid click: "+ txt)
         e.classList.toggle("inactive")
         e.classList.toggle("get-to-the-top");
 
-        // change response to show all recipes if there are no tags selected
-        if(tagArray.length===0){
-            response = await fetch ("/recipe-index/renderAllPosts", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })       
+        const activeQuery = searchInput.value.trim()
+        if (activeQuery) {
+            searchCall(activeQuery)
         } else {
-            response = await fetch ("/recipe-index/tagFind", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    prompt: tagArray,
-                }),
-            })
+            tagCall()
         }
-
-        if (response.ok) {
-            console.log("successful api call")
-            let data = await response.json()
-            console.log(typeof data)
-            console.log(data.length)
-            document.querySelector("#tagPostCont").innerHTML = data.html;
-
-            if(resultCont){
-                const tagArrayString = tagArray.join(", ")
-                if(tagArray.length>0){
-                    resultCont.innerHTML=`Showing results with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArrayString}</div> (${data.count})`
-                } else {
-                    resultCont.innerHTML="Recipes:"
-                }
-            }            
-        } else console.log("idk man it didn't work")
-
+        console.log(tagArray)
 
     })  
 
     
 });
 
+document.getElementById('searchformBig').onsubmit = function() {
+    let q = searchInput.value;
+    if (q){
+        console.log(q)
+        searchCall(q)
+    } else if (!q && tagArray.length===0) {
+        renderAll()
+    } else {
+        tagCall()
+    }
+    return false;
+}
 
+
+// functions
 async function tagCall() {
-
     // change response to show all recipes if there are no tags selected
     if(tagArray.length===0 && !initialQuery){
-        response = await fetch ("/recipe-index/renderAllPosts", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })        
+        renderAll()
+        return
     } else {
         response = await fetch ("/recipe-index/tagFind", {
             method: 'POST',
@@ -111,9 +88,7 @@ async function tagCall() {
     }
 
     if (response.ok) {
-        console.log("successful api call")
         let data = await response.json()
-        console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
 
         if(resultCont){
@@ -134,29 +109,42 @@ async function searchCall(query) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-        // hard-coded for testing
             prompt: query,
+            tags: tagArray,
         }),        
     })
 
     if (response.ok) {
         console.log("successful search call")
         let data = await response.json()
-        console.log(data)
         document.querySelector("#tagPostCont").innerHTML = data.html;
 
         if(resultCont){
-            resultCont.innerHTML=`Showing search results for <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${query}</div> (${data.count})`
+            let tagMsg = tagArray.length > 0 ? ` with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArray.join(", ")}</div>` : ""
+            resultCont.innerHTML=`Showing results for <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">\"${query}\"</div>${tagMsg} (${data.count})`
         }            
     } else console.log("idk man it didn't work")
 }
 
-document.getElementById('searchformBig').onsubmit = function() {
-    let q = searchInput.value;
-    if (q){
-        console.log(q)
-        searchCall(q)
-    }
-    return false;
-}
+async function renderAll() {
+    response = await fetch ("/recipe-index/renderAllPosts", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    if (response.ok) {
+        let data = await response.json()
+        document.querySelector("#tagPostCont").innerHTML = data.html;
 
+        if(resultCont){
+            const tagArrayString = tagArray.join(", ")
+            if(tagArray.length>0){
+                resultCont.innerHTML=`Showing results with tags <div style="border-radius:5px; color: var(--base-color); background-color: var(--background-recipe-color); padding-left: 4px; padding-right: 4px;">${tagArrayString}</div> (${data.count})`
+            } else {
+                resultCont.innerHTML="Recipes:"
+            }
+        }            
+    } else console.log("idk man it didn't work")
+
+}
