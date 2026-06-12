@@ -81,6 +81,10 @@ body {
 
   color: #3d405b;
   background-color: #f4f1de;
+
+
+  --main-color: #3d405b;
+  --main-background-color: #f4f1de;
   --link-color: #456958;
   --link-hover-color: #81b29a;
   --background-recipe-color: #fbfbf9;
@@ -92,6 +96,9 @@ body {
 .dark-mode {
   color: #f4f1de;
   background-color: #0e0f16;
+
+  --main-color: #f4f1de;
+  --main-background-color: #0e0f16;
   --link-color: #81b29a;
   --link-hover-color: #a0ddbf;
   --background-recipe-color: #212332;
@@ -621,7 +628,7 @@ p a {
 #searchinputBig {
   border-radius: 6px;
   height: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   text-indent: 35px;
   width: 50%;
   font-size: 18px;
@@ -635,4 +642,24 @@ p a {
   border: 1px solid var(--link-color);
   vertical-align: middle;
   font-family: 'DM Sans';
+}
+
+#commentMsg {
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.wipe {
+  height: auto;
+  width: 100%;
+  background-color: var(--main-background-color);
+  position:absolute;
+  top:0;
+  bottom:0;
+}
+
+.wipeGo {
+  top: 35px;
+  transition: top .5s;
 }
