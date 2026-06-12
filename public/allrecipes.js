@@ -1,4 +1,5 @@
-console.log("main.js from public loaded")
+console.log("allrecipes.js from public loaded")
+import {eggQuery} from '../eggs.js';
 
 const tagArray = []
 let response = ""
@@ -11,11 +12,13 @@ const initialQuery = params.get('q')
 const resultCont = document.getElementById("resultCont")
 const searchInput = document.getElementById('searchinputBig')
 const tagList = document.querySelectorAll(".tag")
-
+const commentMsg = document.getElementById('commentMsg')
+const wipe = document.getElementById('wipe')
 
 if (initialQuery) {
     searchInput.value = initialQuery
     searchCall(initialQuery)
+    eggHandler(initialQuery)
 }
 
 if (urlTags) {
@@ -57,17 +60,30 @@ tagList.forEach(e => {
 
 document.getElementById('searchformBig').onsubmit = function() {
     let q = searchInput.value;
+
     if (q){
         console.log(q)
         searchCall(q)
-    } else if (!q && tagArray.length===0) {
+    } else if (tagArray.length===0) {
         renderAll()
     } else {
         tagCall()
     }
+
+    eggHandler (q);
     return false;
 }
 
+async function eggHandler (q) {
+    let comment = eggQuery(q)
+    if (comment) {
+        wipe.classList.add('wipeGo')
+        commentMsg.innerHTML=comment;
+    } else {
+        wipe.classList.remove('wipeGo')
+        commentMsg.innerHTML='';
+    }
+}
 
 // functions
 async function tagCall() {
