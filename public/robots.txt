@@ -2,7 +2,6 @@
 
 User-agent: *
 Sitemap: https://mikeb.cooking/sitemap.xml
-Disallow: /embarrassing-photo-of-spongebob-at-the-christmas-party/
 
 User-agent: Amazonbot
 Disallow: /
