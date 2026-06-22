@@ -4,18 +4,20 @@
     document.body.classList.add("dark-mode")
   }
 </script>
+
   <!-- Rounded switch -->
-  <label class="switch">
-    <input type="checkbox" id="dm-switcher">
-    <span class="slider round">
-      <img id="dm-svg-lm" class="dm-svg" height="22px" width="22px" style="left:3px" src="../svgs/lightmode.svg">
-      <img id="dm-svg-dm" class="dm-svg" height="22px" width="22px" style="left:7px" src="../svgs/darkmode.svg">
-    </span>
-  </label>
-  <!-- hamburger menu-->
-    <span class="burger">
-      <img id="dm-svg-lm" class="dm-svg" height="26px" width="26px" src="../svgs/menu.svg">
-    </span>
+<label class="switch">
+  <input type="checkbox" id="dm-switcher">
+  <span class="slider round">
+    <img id="dm-svg-lm" class="dm-svg" height="22px" width="22px" style="left:3px" src="../svgs/lightmode.svg">
+    <img id="dm-svg-dm" class="dm-svg" height="22px" width="22px" style="left:7px" src="../svgs/darkmode.svg">
+  </span>
+</label>
+<!-- hamburger menu-->
+<span class="burger" id="burgerMenu">
+  <img id="dm-svg-lm" class="dm-svg" height="26px" width="26px" src="../svgs/menu.svg">
+</span>
+
 <header>
   <div id="banner-cont" style="display:grid">
     <img id="banner" class="banner" src = "/images/header-lm.png" style = "z-index:2" alt="Mike B. Cooking">
@@ -35,6 +37,23 @@
   </nav>
   <hr class="header-hr">
 </header>
+
+<dialog id="menuDialog" class="">
+  <span class="burger" id="closeBurger">
+    <img id="dm-svg-lm" class="dm-svg" height="26px" width="26px" src="../svgs/close.svg">
+  </span>
+  <div style="margin-top: 30px">
+    <div><a href="/" class="navlink"> Home</a></div>
+    <hr>
+    <div><a href="/about" class="navlink"> About</a></div>
+    <hr>
+    <div><a href="/recipe-index" class="navlink"> All Recipes</a></div>
+    <hr>
+    <div><a href="/contact" class="navlink"> Contact</a></div>
+    <hr>
+  </div>
+</dialog>
+
 <script>
   bannerStatic = document.getElementById("banner")
   bannerAni = document.getElementById("bannerAni")
