@@ -1,4 +1,4 @@
-<script src="../darkmode.js" defer></script>
+<script src="../menus.js" defer></script>
 <script>
   if (localStorage.getItem("darkmode")==="true"){
     document.body.classList.add("dark-mode")
@@ -11,23 +11,27 @@
       <img id="dm-svg-lm" class="dm-svg" height="22px" width="22px" style="left:3px" src="../svgs/lightmode.svg">
       <img id="dm-svg-dm" class="dm-svg" height="22px" width="22px" style="left:7px" src="../svgs/darkmode.svg">
     </span>
-
   </label>
-<header >
+  <!-- hamburger menu-->
+    <span class="burger">
+      <img id="dm-svg-lm" class="dm-svg" height="26px" width="26px" src="../svgs/menu.svg">
+    </span>
+<header>
   <div id="banner-cont" style="display:grid">
     <img id="banner" class="banner" src = "/images/header-lm.png" style = "z-index:2" alt="Mike B. Cooking">
     <img id="bannerAni" class="banner" src = "/images/header-lm-ani.gif" style = "z-index:1; opacity:0" alt="Mike B. Cooking">
-
   </div>
   <hr class="header-hr">
-  <nav style="display: flex;flex-direction:row">
-    <div><a href="/" class="navlink"> Home</a>|</div>
-    <div><a href="/about" class="navlink"> About</a>|</div>
-    <div><a href="/recipe-index" class="navlink"> All Recipes</a>|</div>
-    <div><a href="/contact" class="navlink"> Contact</a> </div>
-  <form id="searchformNav">
-    <input id="searchinputNav" class="searchbar" type="text" name="search" size="10" maxlength="255" placeholder="">
-  </form>
+  <nav id="headernav">
+    <div id="header-txt-options">
+      <div><a href="/" class="navlink"> Home</a>|</div>
+      <div><a href="/about" class="navlink"> About</a>|</div>
+      <div><a href="/recipe-index" class="navlink"> All Recipes</a>|</div>
+      <div><a href="/contact" class="navlink"> Contact</a> </div>
+    </div>
+    <form id="searchformNav">
+      <input id="searchinputNav" class="searchbar" type="text" name="search" size="10" maxlength="255" placeholder="">
+    </form>
   </nav>
   <hr class="header-hr">
 </header>

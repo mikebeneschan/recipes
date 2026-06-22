@@ -1,4 +1,4 @@
-console.log("darkmode.js loaded")
+console.log("menus.js loaded")
 let darkmode = localStorage.getItem('darkmode')
 const switcher = document.getElementById('dm-switcher')
 const subheader = document.getElementById("subheader")
