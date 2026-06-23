@@ -388,6 +388,7 @@ button {
   border: none;
   box-shadow: 0px 0px 0px 0px var(--link-color);
   transition: background-color 0.1s;
+  color: white;
 }
 
 button:hover {
