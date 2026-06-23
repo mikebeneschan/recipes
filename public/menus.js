@@ -1,4 +1,4 @@
-console.log("darkmode.js loaded")
+console.log("menus.js loaded")
 let darkmode = localStorage.getItem('darkmode')
 const switcher = document.getElementById('dm-switcher')
 const subheader = document.getElementById("subheader")
@@ -93,3 +93,27 @@ if (darkmode==="true"){
     switcher.checked = true;
     enableDarkMode()
 }
+
+const burgerMenu = document.getElementById("burgerMenu");
+const menuDialog = document.getElementById("menuDialog")
+const closeDialog = document.getElementById("closeDialog")
+const xbutton = document.getElementById("closeBurger")
+
+function dialogCloser() {
+    if (!menuDialog.open) return;
+    menuDialog.classList.remove("dialog-open")
+    menuDialog.classList.add("dialog-close")
+    setTimeout(()=> menuDialog.close(), 250);    
+}
+
+burgerMenu.addEventListener('click', ()=> {
+    if (!menuDialog.open) {
+        menuDialog.show();
+    }
+    menuDialog.classList.remove("dialog-close")
+    setTimeout(()=> menuDialog.classList.add("dialog-open"))
+})
+
+xbutton.addEventListener('click', ()=> {
+    dialogCloser();
+})
