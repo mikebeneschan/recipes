@@ -172,10 +172,10 @@ nav {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 30px;
+    width: 40px;
     background-color: white;
     display: flex;
-    height: 30px;
+    height: 40px;
     justify-content: center;
     border-radius: 5px;
 }
@@ -201,6 +201,10 @@ dialog {
   left: auto;
   right: 0;
   width: 50%;
+}
+
+#menuDialog a {
+  font-size: 20px;
 }
 
 .dialog-open {
@@ -727,5 +731,13 @@ p a {
   }
   #burgerMenu {
     visibility: visible;
+  }
+
+  .gerald1 {
+    left: 60%;
+  }
+
+  .gerald2 {
+    left: 60%;
   }
 }
