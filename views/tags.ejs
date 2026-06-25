@@ -23,7 +23,7 @@
             <h3 style="margin-right: 10px">Tags:</h3>
             <!-- rows of tags -->
             <div style="display: flex; flex-direction: column;">
-                <div id="possibleTagBox" style="display: flex; flex-direction: row;">
+                <div id="possibleTagBox">
                     <div class="tag-cont">
                         <p class="tag tag-Alcohol inactive">Alcohol</p>
                     </div>
@@ -54,8 +54,6 @@
                     <div class="tag-cont">
                         <p class="tag tag-not-a-recipe inactive">Not a recipe</p>
                     </div>
-                </div>
-                <div id="possibleTagBox" style="display: flex; flex-direction: row;">
                     <div class="tag-cont">
                         <p class="tag tag-Pasta inactive">Pasta</p>
                     </div>
@@ -73,13 +71,13 @@
         </div>
         <br>
         
-        <h2 id="resultCont" class="st" style="display:flex; white-space:pre-wrap">Recipes: </h2>
+        <h2 id="resultCont" class="st" style="display:flex; white-space:pre-wrap; flex-wrap: wrap">Recipes: </h2>
         <hr>
         <div id="tagPostCont">
         <%- include('partials/foundPosts') %>
         </div>
     </div>
-
+    <div style="padding-bottom: 4em"></div>
 
 </body>
 <script type="module", src="../allrecipes.js"></script>

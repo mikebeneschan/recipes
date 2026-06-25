@@ -739,6 +739,12 @@ footer {
   font-style:italic
 }
 
+#possibleTagBox {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /* MOBILE VIEW */
 @media (max-width: 750px) {
   .maincont {
@@ -780,6 +786,12 @@ footer {
     height: 32px;
     border-radius:15px;
   }
+
+  #searchinputBig {
+    width:100%;
+    height: 2em;
+  }
+
   #burgerMenu {
     visibility: visible;
   }
