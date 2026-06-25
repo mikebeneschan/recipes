@@ -71,13 +71,13 @@ body {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  /* margin: 10px; */
+  margin-bottom: 0;
   display: flexbox;
   place-items: center;
-  width: 99%;
+  /* width: 99%; */
   min-height: 100vh;
   font-family: "DM Sans";
-  padding-bottom: 300px;
+  /* padding-bottom: 300px; */
 
   color: #3d405b;
   background-color: #f4f1de;
@@ -136,11 +136,35 @@ hr {
 }
 
 main {
-  min-width: 1000px;
+  width:100%
+  /* min-width: 1000px;
+  position: relative;
+  margin: 0 auto; */
+}
+
+.maincont {
+  max-width: 52%;
   position: relative;
   margin: 0 auto;
 }
 
+#circlecont {
+  position:relative;
+  max-width: 52%;
+  margin: 0 auto;
+}
+
+.fullbleed {
+  --padding-value: 2%;
+  background-color: var(--main-color);
+  padding-bottom: var(--padding-value);
+  padding-top: var(--padding-value);
+  margin-top: 2em;
+}
+
+.fullbleed p {
+  color: var(--background-recipe-color);
+}
 
 nav {
   top: 4px;
@@ -274,10 +298,11 @@ li:hover .foodpic {
 
 /* DARKMODE SLIDER (ALL PAGES) */
 .switch {
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 60px;
   height: 28px;
+  margin-left: .5em;
 }
 
 /* Hide default HTML checkbox */
@@ -588,6 +613,7 @@ p a {
 
 .hp-icon-cont a {
   margin-top: 10px;
+  color: var(--background-recipe-color);
 }
 
 .hp-all-icon-cont {
@@ -688,10 +714,34 @@ p a {
   transition: top .5s;
 }
 
+footer {
+  width: 100%;
+}
+
+.footer-content{
+  text-align:center;
+}
+
+.footer-content p, .footer-content i {
+  max-width:fit-content;
+  margin: auto;
+  font-size: .9em;
+  color: var(--background-recipe-color);
+  display:block;
+}
+
+.footer-content a {
+  display:block;
+  text-decoration:underline;
+  color: var(--link-hover-color);
+  margin: 1em;
+  cursor:pointer;
+  font-style:italic
+}
 
 /* MOBILE VIEW */
 @media (max-width: 750px) {
-  main {
+  .maincont {
     min-width: 0%;
     max-width: 95%;
   }
