@@ -18,10 +18,10 @@ const enableDarkMode = () => {
         gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothingheredarkmode.png\" style = \"height: 350px; width: auto; text-align: center;\" alt=\"crude drawing of a cat saying the following: Nothing here! Wow, dark mode! \">"
     }
     if (banner) {
-        banner.innerHTML = `
-            <img id="banner" class="banner" src = "/images/header-dm.png" style = "z-index:2" alt="Mike B. Cooking">
-            <img id="bannerAni" class="banner" src = "/images/header-dm-ani.gif" style = "z-index:1; opacity:0" alt="Mike B. Cooking">
-        `
+        bannerStatic = document.getElementById("banner")
+        bannerAni = document.getElementById("bannerAni")
+        bannerStatic.src="/images/header-dm.png"
+        bannerAni.src="/images/header-dm-ani.gif"
     }
     bannerAnimation()
 
@@ -44,11 +44,10 @@ const disableDarkMode = () => {
         gerald.innerHTML = "<img id=\"gerald\" src = \"/images/catnothinghere.png\" style = \"height: 350px; width: auto; text-align: center;\" alt=\"crude drawing of a cat saying the following: Nothing here! \">"
     }
     if (banner) {
-        banner.innerHTML = `
-            <img id="banner" class="banner" src = "/images/header-lm.png" style = "z-index:2" alt="Mike B. Cooking">
-            <img id="bannerAni" class="banner" src = "/images/header-lm-ani.gif" style = "z-index:1; opacity:0" alt="Mike B. Cooking">
-            
-        `
+        bannerStatic = document.getElementById("banner")
+        bannerAni = document.getElementById("bannerAni")
+        bannerStatic.src="/images/header-lm.png"
+        bannerAni.src="/images/header-lm-ani.gif"
     }
 
     bannerAnimation()
