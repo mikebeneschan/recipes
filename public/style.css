@@ -151,7 +151,7 @@ main {
 
 #circlecont {
   position:relative;
-  max-width: 52%;
+  max-width: 70%;
   margin: 0 auto;
 }
 
@@ -620,7 +620,7 @@ p a {
 
 .hp-all-icon-cont {
   max-width: 80%;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
 
 
@@ -747,6 +747,28 @@ footer {
   flex-wrap: wrap;
 }
 
+.biosection {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+}
+
+#im-mike {
+  text-align:center;
+  margin-bottom: 18px;
+  /* text-decoration: underline; */
+}
+
+#mike-portrait {
+  width: 90%;
+  height: auto;
+  display: flex;
+  box-shadow: 15px 15px 0px 0px #3d405b;
+  outline: solid 2px #3d405b;
+  max-width:300px;
+}
+
 /* MOBILE VIEW */
 @media (max-width: 750px) {
   .maincont {
@@ -763,7 +785,7 @@ footer {
   }
   .hp-all-icon-cont {
     max-width: 95%;
-    /* margin: 0 auto; */
+    margin: 0 auto;
   }
   #icon-wrapper {
     grid-template-columns: repeat(4, 1fr);
