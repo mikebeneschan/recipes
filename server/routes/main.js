@@ -52,6 +52,15 @@ router.get('/contact', (req, res) => {
   });
 });
 
+// Cookie policy
+router.get('/cookiepolicy', (req, res) => {
+  res.render('cookiepolicy', {
+    layout: './layouts/main',
+    title: 'Cookie Policy',
+    desc: "The cookie policy page"
+  });
+});
+
 
 router.post('/posts', async (req,res) => {
     let query = req.body.prompt

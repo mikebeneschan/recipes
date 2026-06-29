@@ -1,66 +1,87 @@
 
 <!-- <h1>Mike's recipes</h1> -->
-<h2 id="subheader" style="margin-top: 5px; margin-bottom: 0">This is the homepage</h2>
-
-<br>
-<div id="hero-cont">
-    <%- include('partials/heroImage') %>
+<div class="maincont">
+    <h2 id="subheader" style="margin-top: 5px; margin-bottom: 0">This is the homepage</h2>
+    
+    <br>
+    <div id="hero-cont">
+        <%- include('partials/heroImage') %>
+    </div>
+    
+    <h2 style="margin-bottom: 0">Most recent: </h2>
+    <hr>
+    <div id="main-cont" style="max-width:90%; margin: 0 auto">
+        <%- include('partials/foundPosts') %>
+    </div>
+    <div style="text-align: center">
+        <button type="button" id="loadMore">Load more</button>
+    </div>
 </div>
-
-<h2 style="margin-bottom: 0">Most recent: </h2>
-<hr>
-<div id="main-cont" style="max-width:90%; margin: 0 auto">
-    <%- include('partials/foundPosts') %>
-</div>
-<div style="text-align: center">
-    <button type="button" id="loadMore">Load more</button>
-</div>
-<h2>Click on these circles</h2>
-<div class = "hp-all-icon-cont">
-    <div id="icon-wrapper">
-        <div class="hp-icon-cont">
-            <a href="/recipe-index?tags=Breakfast">
-                <div class="hp-icon-bg hp-breakfast">
-                    <img class="hp-icon" src="/svgs/hp/draw-breakfast.png">
-                    <!-- <img class="hp-icon" src="/svgs/hp/donut.svg"> -->
+<div class="fullbleed">
+    <div id="circlecont">
+    <h2 style="color:var(--background-recipe-color);margin-top:0;font-style:italic">Click on these circles</h2>
+        <div class = "hp-all-icon-cont">
+            <div id="icon-wrapper">
+                <div class="hp-icon-cont">
+                    <a href="/recipe-index?tags=Breakfast">
+                        <div class="hp-icon-bg hp-breakfast">
+                            <img class="hp-icon" src="/svgs/hp/draw-breakfast.png">
+                            <!-- <img class="hp-icon" src="/svgs/hp/donut.svg"> -->
+                        </div>
+                        <a>Breakfast</a>
+                    </a>
                 </div>
-                <a>Breakfast</a>
-            </a>
-        </div>
-        <div class="hp-icon-cont ">
-            <a href="/recipe-index?tags=Sandwiches">
-                <div class="hp-icon-bg hp-lunch">
-                    <img class="hp-icon" src="/svgs/hp/draw-lunch.png">
+                <div class="hp-icon-cont ">
+                    <a href="/recipe-index?tags=Sandwiches">
+                        <div class="hp-icon-bg hp-lunch">
+                            <img class="hp-icon" src="/svgs/hp/draw-lunch.png">
+                        </div>
+                        <a>Sandwiches</a>
+                    </a>
                 </div>
-                <a>Sandwiches</a>
-            </a>
-        </div>
-        <div class="hp-icon-cont ">
-            <a href="/recipe-index?tags=Family-sized">
-                <div class="hp-icon-bg hp-dinner">
-                    <img class="hp-icon" src="/svgs/hp/draw-dinner.png">
+                <div class="hp-icon-cont ">
+                    <a href="/recipe-index?tags=Family-sized">
+                        <div class="hp-icon-bg hp-dinner">
+                            <img class="hp-icon" src="/svgs/hp/draw-dinner.png">
+                        </div>
+                        <a>Dinners</a>
+                    </a>
                 </div>
-                <a>Dinners</a>
-            </a>
-        </div>
-        <div class="hp-icon-cont ">
-            <a href="/recipe-index?tags=Dessert">
-                <div class="hp-icon-bg hp-dessert">
-                    <img class="hp-icon" src="/svgs/hp/draw-dessert.png">
+                <div class="hp-icon-cont ">
+                    <a href="/recipe-index?tags=Dessert">
+                        <div class="hp-icon-bg hp-dessert">
+                            <img class="hp-icon" src="/svgs/hp/draw-dessert.png">
+                        </div>
+                        <a>Dessert</a>
+                    </a>
                 </div>
-                <a>Dessert</a>
-            </a>
-        </div>
-        <div class="hp-icon-cont ">
-            <a href="/recipe-index?tags=Drink">
-                <div class="hp-icon-bg hp-drink">
-                    <img class="hp-icon" src="/svgs/hp/draw-drink.png">
+                <div class="hp-icon-cont ">
+                    <a href="/recipe-index?tags=Drink">
+                        <div class="hp-icon-bg hp-drink">
+                            <img class="hp-icon" src="/svgs/hp/draw-drink.png">
+                        </div>
+                        <a>Drinks</a>
+                    </a>
                 </div>
-                <a>Drinks</a>
-            </a>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="maincont biosection" style="padding-top: 50px;padding-bottom: 250px">
+    <div>
+        <h2 id="im-mike"style="text-align:center">I'm Mike</h2>
+        <hr style="margin-bottom:0px; margin-top: 0px">
+        <p>I like to cook stuff and then tell other people how I cook it. My food has been described as "really good" by my girlfriend and "inedible" by no one, so basically you should trust what I say about cooking. I have zero Michelin stars, but I have cooked for money. I've been cooking for over a decade, and I'm happy to share what I know with you.</p>
+        <div style="text-align:center">
+            <button onclick="location.href='/about'" style="display:inline-flex; align-items:center; width:fit-content; padding:20px">More about me</button>
+        </div>
+    </div>
+    <div style="place-items: center;">
+        <img id="mike-portrait" src="/images/selfportrait.png">
+    </div>
+</div>
+
 <script>
     var subh = document.getElementById("subheader")
     if (subh.classList.contains("dark-mode")) {subh.innerHTML = "This is the homepage (now in dark mode)"}

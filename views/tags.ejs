@@ -7,80 +7,77 @@
     <title>Tags</title>
 </head>
 <body>
-    <h1>All Recipes</h1>
-    <h2 class="st">Search for a post</h2>
-    <form id="searchformBig">
-        <input id="searchinputBig" class="searchbar" type="text" name="search" size="10" maxlength="255" placeholder="">
-    </form>
-    <div style="position:relative; height: 30px">
-        <p id="commentMsg" class="commentInactive"></p>
-        <div id="wipe" class="wipe"></div>
-    </div>
-    <h2 class="st" style="margin-top: 20px">Filter by tags</h2>
-    <!-- probably some way in the future to make a list of tags automatically-->
-    <div style="display: flex; flex-direction: row;">
-        <h3 style="margin-right: 10px">Tags:</h3>
-        <!-- rows of tags -->
-        <div style="display: flex; flex-direction: column;">
-            <div id="possibleTagBox" style="display: flex; flex-direction: row;">
-                <div class="tag-cont">
-                    <p class="tag tag-Alcohol inactive">Alcohol</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Breakfast inactive">Breakfast</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Coffee inactive">Coffee</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Dessert inactive">Dessert</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Drink inactive">Drink</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Family-sized inactive">Family-sized</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Fish inactive">Fish</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Italian inactive">Italian</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Korean inactive">Korean</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-not-a-recipe inactive">Not a recipe</p>
-                </div>
-
-            </div>
-            <div id="possibleTagBox" style="display: flex; flex-direction: row;">
-                <div class="tag-cont">
-                    <p class="tag tag-Pasta inactive">Pasta</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Sandwiches inactive">Sandwiches</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Sides inactive">Sides</p>
-                </div>
-                <div class="tag-cont">
-                    <p class="tag tag-Vegetarian inactive">Vegetarian</p>
+    <div class="maincont">
+        <h1>All Recipes</h1>
+        <h2 class="st">Search for a post</h2>
+        <form id="searchformBig">
+            <input id="searchinputBig" class="searchbar" type="text" name="search" size="10" maxlength="255" placeholder="">
+        </form>
+        <div style="position:relative; height: 30px">
+            <p id="commentMsg" class="commentInactive"></p>
+            <div id="wipe" class="wipe"></div>
+        </div>
+        <h2 class="st" style="margin-top: 20px">Filter by tags</h2>
+        <!-- probably some way in the future to make a list of tags automatically-->
+        <div style="display: flex; flex-direction: row;">
+            <h3 style="margin-right: 10px">Tags:</h3>
+            <!-- rows of tags -->
+            <div style="display: flex; flex-direction: column;">
+                <div id="possibleTagBox">
+                    <div class="tag-cont">
+                        <p class="tag tag-Alcohol inactive">Alcohol</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Breakfast inactive">Breakfast</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Coffee inactive">Coffee</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Dessert inactive">Dessert</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Drink inactive">Drink</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Family-sized inactive">Family-sized</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Fish inactive">Fish</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Italian inactive">Italian</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Korean inactive">Korean</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-not-a-recipe inactive">Not a recipe</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Pasta inactive">Pasta</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Sandwiches inactive">Sandwiches</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Sides inactive">Sides</p>
+                    </div>
+                    <div class="tag-cont">
+                        <p class="tag tag-Vegetarian inactive">Vegetarian</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <br>
+        
+        <h2 id="resultCont" class="st" style="display:flex; white-space:pre-wrap; flex-wrap: wrap">Recipes: </h2>
+        <hr>
+        <div id="tagPostCont">
+        <%- include('partials/foundPosts') %>
+        </div>
     </div>
-
-    <br>
-    
-    <h2 id="resultCont" class="st" style="display:flex; white-space:pre-wrap">Recipes: </h2>
-    <hr>
-
-    <div id="tagPostCont">
-    <%- include('partials/foundPosts') %>
-    </div>
-
+    <div style="padding-bottom: 4em"></div>
 
 </body>
 <script type="module", src="../allrecipes.js"></script>
