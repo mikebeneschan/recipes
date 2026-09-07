@@ -77,6 +77,21 @@ When the tags page is loaded, an empty array ("tagArray") is created. Query para
 
 When a tag button is clicked, that tag is either added or removed from the tagArray based on whether it is already inside the tagArray. Afterwards, the tagFind endpoint is called and the EJS partial is loaded onto the page. 
 
+## Search
+When a query is entered in the search bar, a POST request is executed as defined in tags.js. To execute the search, we initially perform error checking in case the user's query only consists of English stopwords, which would normally be filtered out of the query. Then, we use MongoDB's aggregation API to perform the actual search. The search index is defined within db.js.
+
+These are the stages of the aggregation pipeline:
+* Search ($search), using our custom search index "searchv1" which includes custom synonym mappings.
+  * Use a compound search since this will search across multiple aspects of each MongoDB document.
+  * When comparing query against the title, uses "autocomplete" (Searching "yog" returns results where the title includes "yogurt").
+  * For all other search paths (subtitle, recipe content, tags), uses "text" (meaning text should match exactly)
+* Optional match ($match) stage is triggered if any tag buttons are selected on the tags page. If this stage is triggered, the query only returns posts that include the selected tags.
+
+Additional notes on our search index:
+* We use lucene.english as the analyzer, as the website's content is written entirely in English. This gives us access to some nice features, such as automatic filtering of English stopwords, and automatic equivalency for upper-case and lower-case queries.
+* In MongoDB Atlas, I have also defined many synonym mappings that make some queries behave more nicely. Some mappings are explicit and some are equivalent. For example, "Italy" and "Italian" are treated as equivalent, whereas the explicit mapping for "berry" means queries with that term will also return results for "blackberry", "blueberry", etc.
+* Relevancy scores for query results was not customized and uses MongoDB Atlas's default.
+
 ## Writing new recipes
-Writing new recipes are handled via a separate Electron app. The source code for that app can be found [here](https://github.com/mikebeneschan/mbc-recipewriter). While not an ideal solution, this solution was chosen in the interest of security and as a result of the limitations of Render's free hosting plan. See [this section](https://github.com/mikebeneschan/mbc-recipewriter) of the app's README for more info. 
+Writing new recipes are handled via a separate Electron app. The source code for that app can be found [here](https://github.com/mikebeneschan/mbc-recipewriter). This solution was chosen in the interest of security and as a result of the limitations of Render's free hosting plan. See [this section](https://github.com/mikebeneschan/mbc-recipewriter) of the app's README for more info. 
 
